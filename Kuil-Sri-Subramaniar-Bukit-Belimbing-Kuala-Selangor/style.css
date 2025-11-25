@@ -1,0 +1,49 @@
+/* Sacred Styling for Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor */
+
+body {
+  background-color: #fff8e1; /* soft golden background */
+  font-family: 'Lora', serif;
+  color: #4b2e83; /* deep purple for devotion */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background: linear-gradient(90deg, #d4af37, #f4a460);
+  padding: 30px;
+  color: white;
+  text-shadow: 0 0 10px #4b2e83;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+main {
+  padding: 40px;
+}
+
+h2 {
+  color: #d4af37;
+  text-shadow: 0 0 8px #f4a460;
+}
+
+p {
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: #4b2e83;
+  color: #fff8e1;
+  padding: 20px;
+  margin-top: 40px;
+}
