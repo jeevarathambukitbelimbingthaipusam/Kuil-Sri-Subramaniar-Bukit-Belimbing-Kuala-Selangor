@@ -155,7 +155,7 @@
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock2">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock3">
     </div>
-    <audio id="bellSound" autoplay muted>
+    <audio id="bellSound">
       <source src="assets/bell.mp3" type="audio/mpeg">
     </audio>
   </div>
@@ -186,7 +186,7 @@
       <p>&copy; 2025 Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</p>
     </footer>
 
-    <audio id="chantSound" autoplay loop muted>
+    <audio id="chantSound" loop>
       <source src="assets/om-shanmuka.mp3" type="audio/mpeg">
     </audio>
   </div>
@@ -201,30 +201,30 @@
       const bell = document.getElementById("bellSound");
       const chant = document.getElementById("chantSound");
 
-      // Keep loading screen visible for 10 seconds
-      loading.classList.add("fade-out");
-
-      // Play bell immediately and keep ringing for 10 seconds
+      // Play bell immediately (user gesture allows autoplay)
       if (bell) {
-        bell.muted = false;
-        bell.volume = 1.0;
+        bell.currentTime = 0;
+        bell.loop = true; // keep ringing
         bell.play();
-        setTimeout(() => {
-          bell.pause();
-        }, 10000); // stop bell after 10 seconds
       }
 
-      // After 10 seconds, show homepage and play chant
+      // Keep loading screen visible for 10 seconds
       setTimeout(() => {
+        // Stop bell
+        if (bell) {
+          bell.pause();
+        }
+
+        // Show homepage
         loading.style.display = "none";
         homepage.style.display = "block";
 
+        // Play chant
         if (chant) {
-          chant.muted = false;
           chant.volume = 0.6;
           chant.play();
         }
-      }, 10000);
+      }, 10000); // 10 seconds delay
     }
   </script>
 </body>
