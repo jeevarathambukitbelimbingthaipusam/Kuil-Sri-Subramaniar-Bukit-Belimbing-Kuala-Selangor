@@ -1,9 +1,12 @@
 body {
   background-color: #fff8e1;
-  color: #4b2e83;
   font-family: 'Lora', serif;
+  color: #4b2e83;
+  text-align: center;
+  padding: 50px;
 }
 
 h1 {
   color: #d4af37;
   text-shadow: 0 0 10px #f4a460;
+}
