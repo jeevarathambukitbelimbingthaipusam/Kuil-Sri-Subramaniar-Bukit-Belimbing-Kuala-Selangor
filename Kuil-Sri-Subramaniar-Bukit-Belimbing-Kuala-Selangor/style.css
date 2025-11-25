@@ -1,5 +1,6 @@
 /* Sacred Styling for Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor */
 
+/* General Page Styling */
 body {
   background-color: #fff8e1; /* soft golden background */
   font-family: 'Lora', serif;
@@ -9,6 +10,7 @@ body {
   text-align: center;
 }
 
+/* Header */
 header {
   background: linear-gradient(90deg, #d4af37, #f4a460);
   padding: 30px;
@@ -26,6 +28,7 @@ h1 {
   font-size: 1.2em;
 }
 
+/* Main Content */
 main {
   padding: 40px;
 }
@@ -41,9 +44,70 @@ p {
   line-height: 1.6;
 }
 
+/* Footer */
 footer {
   background-color: #4b2e83;
   color: #fff8e1;
   padding: 20px;
   margin-top: 40px;
+}
+
+/* ============================= */
+/* Loading Screen (Vel + Peacocks) */
+/* ============================= */
+
+#loading {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom, #ff9933, #660066);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.vel-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.vel {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 120px;
+  transform: translate(-50%, -50%);
+  animation: spin 4s linear infinite;
+}
+
+.peacock {
+  position: absolute;
+  width: 80px;
+  animation: orbit 8s linear infinite;
+}
+
+.peacock1 { animation-delay: 0s; }
+.peacock2 { animation-delay: 2s; }
+.peacock3 { animation-delay: 4s; }
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbit {
+  0%   { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+/* Hide homepage until loaded */
+#homepage {
+  display: none;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
