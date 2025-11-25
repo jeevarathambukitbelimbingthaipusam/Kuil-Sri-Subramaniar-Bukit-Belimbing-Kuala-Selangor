@@ -127,7 +127,8 @@
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock2">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock3">
     </div>
-    <audio id="bellSound" autoplay>
+    <!-- Temple bell sound (muted initially for autoplay) -->
+    <audio id="bellSound" autoplay muted>
       <source src="assets/bell.mp3" type="audio/mpeg">
     </audio>
   </div>
@@ -158,8 +159,8 @@
       <p>&copy; 2025 Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</p>
     </footer>
 
-    <!-- Chant "Om Shanmuka" looping -->
-    <audio id="chantSound" autoplay loop>
+    <!-- Chant "Om Shanmukam" looping (muted initially for autoplay) -->
+    <audio id="chantSound" autoplay loop muted>
       <source src="assets/om-shanmukam.mp3" type="audio/mpeg">
     </audio>
   </div>
@@ -170,10 +171,14 @@
       const loading = document.getElementById("loading");
       const homepage = document.getElementById("homepage");
       const bell = document.getElementById("bellSound");
+      const chant = document.getElementById("chantSound");
 
+      // Fade out loading screen
       loading.classList.add("fade-out");
 
+      // Unmute and play bell
       if (bell) {
+        bell.muted = false;
         bell.volume = 1.0;
         const fadeAudio = setInterval(() => {
           if (bell.volume > 0.05) {
@@ -185,6 +190,14 @@
         }, 200);
       }
 
+      // Unmute and play chant
+      if (chant) {
+        chant.muted = false;
+        chant.volume = 0.6; // softer background chant
+        chant.play();
+      }
+
+      // Show homepage after fade-out
       setTimeout(() => {
         loading.style.display = "none";
         homepage.style.display = "block";
