@@ -1,0 +1,11 @@
+<!-- index.html -->
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>Sri Subramaniar Temple</title>
+  </head>
+  <body>
+    <h1>Welcome to Lord Murugan’s Abode</h1>
+    <p>May His vel guide your path with light and love.</p>
+  </body>
+</html>
