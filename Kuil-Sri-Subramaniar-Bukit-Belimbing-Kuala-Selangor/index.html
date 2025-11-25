@@ -116,9 +116,37 @@
       from { opacity: 0; }
       to   { opacity: 1; }
     }
+
+    /* Start Button Overlay */
+    #startButton {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+
+    #startButton button {
+      padding: 20px 40px;
+      font-size: 1.5em;
+      background: #d4af37;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      text-shadow: 0 0 10px #4b2e83;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
+  <!-- Start Button -->
+  <div id="startButton">
+    <button onclick="startExperience()">🙏 Can I come in Sri Subramaniar?</button>
+  </div>
+
   <!-- Loading Screen -->
   <div id="loading">
     <div class="vel-container">
@@ -127,7 +155,6 @@
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock2">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock3">
     </div>
-    <!-- Temple bell sound (muted initially for autoplay) -->
     <audio id="bellSound" autoplay muted>
       <source src="assets/bell.mp3" type="audio/mpeg">
     </audio>
@@ -159,15 +186,16 @@
       <p>&copy; 2025 Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</p>
     </footer>
 
-    <!-- Chant "Om Shanmukam" looping (muted initially for autoplay) -->
     <audio id="chantSound" autoplay loop muted>
-      <source src="assets/om-shanmukam.mp3" type="audio/mpeg">
+      <source src="assets/om-shanmuka.mp3" type="audio/mpeg">
     </audio>
   </div>
 
-  <!-- Script to fade out loading and show homepage -->
+  <!-- Script -->
   <script>
-    window.addEventListener("load", () => {
+    function startExperience() {
+      document.getElementById("startButton").style.display = "none";
+
       const loading = document.getElementById("loading");
       const homepage = document.getElementById("homepage");
       const bell = document.getElementById("bellSound");
@@ -176,24 +204,27 @@
       // Fade out loading screen
       loading.classList.add("fade-out");
 
-      // Unmute and play bell
+      // Play bell
       if (bell) {
         bell.muted = false;
         bell.volume = 1.0;
-        const fadeAudio = setInterval(() => {
-          if (bell.volume > 0.05) {
-            bell.volume -= 0.05;
-          } else {
-            clearInterval(fadeAudio);
-            bell.pause();
-          }
-        }, 200);
+        bell.play();
+        setTimeout(() => {
+          const fadeAudio = setInterval(() => {
+            if (bell.volume > 0.05) {
+              bell.volume -= 0.05;
+            } else {
+              clearInterval(fadeAudio);
+              bell.pause();
+            }
+          }, 200);
+        }, 2000);
       }
 
-      // Unmute and play chant
+      // Play chant
       if (chant) {
         chant.muted = false;
-        chant.volume = 0.6; // softer background chant
+        chant.volume = 0.6;
         chant.play();
       }
 
@@ -202,7 +233,7 @@
         loading.style.display = "none";
         homepage.style.display = "block";
       }, 2000);
-    });
+    }
   </script>
 </body>
 </html>
