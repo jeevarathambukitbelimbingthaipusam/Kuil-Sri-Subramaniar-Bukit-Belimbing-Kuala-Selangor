@@ -3,31 +3,204 @@
 <head>
   <meta charset="UTF-8">
   <title>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Sacred Styling for Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor */
+
+    body {
+      background-color: #fff8e1; /* soft golden background */
+      font-family: 'Lora', serif;
+      color: #4b2e83; /* deep purple for devotion */
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background: linear-gradient(90deg, #d4af37, #f4a460);
+      padding: 30px;
+      color: white;
+      text-shadow: 0 0 10px #4b2e83;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .subtitle {
+      font-style: italic;
+      font-size: 1.2em;
+    }
+
+    main {
+      padding: 40px;
+    }
+
+    h2 {
+      color: #d4af37;
+      text-shadow: 0 0 8px #f4a460;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 10px auto;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #4b2e83;
+      color: #fff8e1;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* ============================= */
+    /* Loading Screen (Vel + Peacocks) */
+    /* ============================= */
+
+    #loading {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom, #ff9933, #660066);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .vel-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    .vel {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 120px;
+      transform: translate(-50%, -50%);
+      animation: spin 4s linear infinite;
+    }
+
+    .peacock {
+      position: absolute;
+      width: 80px;
+      animation: orbit 8s linear infinite;
+    }
+
+    .peacock1 { animation-delay: 0s; }
+    .peacock2 { animation-delay: 2s; }
+    .peacock3 { animation-delay: 4s; }
+
+    @keyframes spin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes orbit {
+      0%   { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+    }
+
+    /* Fade-out effect for loading screen */
+    .fade-out {
+      animation: fadeOut 2s ease forwards;
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to   { opacity: 0; visibility: hidden; }
+    }
+
+    /* Hide homepage until loaded */
+    #homepage {
+      display: none;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</h1>
-    <p class="subtitle">A sacred abode of Lord Murugan</p>
-  </header>
+  <!-- Loading Screen -->
+  <div id="loading">
+    <div class="vel-container">
+      <img src="assets/vel.png" alt="Vel" class="vel">
+      <img src="assets/peacock.png" alt="Peacock" class="peacock peacock1">
+      <img src="assets/peacock.png" alt="Peacock" class="peacock peacock2">
+      <img src="assets/peacock.png" alt="Peacock" class="peacock peacock3">
+    </div>
+    <!-- Temple bell sound -->
+    <audio id="bellSound" autoplay>
+      <source src="assets/bell.mp3" type="audio/mpeg">
+    </audio>
+  </div>
 
-  <main>
-    <section class="welcome">
-      <h2>Welcome Devotees</h2>
-      <p>May Lord Murugan’s vel guide your path with light, courage, and divine blessings.</p>
-    </section>
+  <!-- Homepage -->
+  <div id="homepage">
+    <header>
+      <h1>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</h1>
+      <p class="subtitle">A sacred abode of Lord Murugan</p>
+    </header>
 
-    <section class="about">
-      <h2>About the Temple</h2>
-      <p>
-        Nestled in Bukit Belimbing, Kuala Selangor, this temple stands as a beacon of devotion,
-        tradition, and community. It is dedicated to Lord Murugan, the divine warrior and protector.
-      </p>
-    </section>
-  </main>
+    <main>
+      <section class="welcome">
+        <h2>Welcome Devotees</h2>
+        <p>May Lord Murugan’s vel guide your path with light, courage, and divine blessings.</p>
+      </section>
 
-  <footer>
-    <p>&copy; 2025 Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</p>
-  </footer>
+      <section class="about">
+        <h2>About the Temple</h2>
+        <p>
+          Nestled in Bukit Belimbing, Kuala Selangor, this temple stands as a beacon of devotion,
+          tradition, and community. It is dedicated to Lord Murugan, the divine warrior and protector.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</p>
+    </footer>
+
+    <!-- Chant "Om Shanmuka" looping -->
+    <audio id="chantSound" autoplay loop>
+      <source src="assets/om-shanmuka.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Script to fade out loading and show homepage -->
+  <script>
+    window.addEventListener("load", () => {
+      const loading = document.getElementById("loading");
+      const homepage = document.getElementById("homepage");
+      const bell = document.getElementById("bellSound");
+
+      // Add fade-out class to loading screen
+      loading.classList.add("fade-out");
+
+      // Fade out bell sound
+      if (bell) {
+        bell.volume = 1.0;
+        const fadeAudio = setInterval(() => {
+          if (bell.volume > 0.05) {
+            bell.volume -= 0.05;
+          } else {
+            clearInterval(fadeAudio);
+            bell.pause();
+          }
+        }, 200);
+      }
+
+      // After fade-out completes, hide loading and show homepage
+      setTimeout(() => {
+        loading.style.display = "none";
+        homepage.style.display = "block";
+      }, 2000); // matches fadeOut duration
+    });
+  </script>
 </body>
 </html>
