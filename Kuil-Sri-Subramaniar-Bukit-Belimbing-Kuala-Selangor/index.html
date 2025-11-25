@@ -204,7 +204,7 @@
       // Fade out loading screen
       loading.classList.add("fade-out");
 
-      // Play bell
+      // Play bell immediately
       if (bell) {
         bell.muted = false;
         bell.volume = 1.0;
@@ -221,12 +221,14 @@
         }, 2000);
       }
 
-      // Play chant
-      if (chant) {
-        chant.muted = false;
-        chant.volume = 0.6;
-        chant.play();
-      }
+      // Play chant after 3 seconds
+      setTimeout(() => {
+        if (chant) {
+          chant.muted = false;
+          chant.volume = 0.6;
+          chant.play();
+        }
+      }, 3000);
 
       // Show homepage after fade-out
       setTimeout(() => {
