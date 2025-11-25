@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <title>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</title>
   <style>
-    /* Sacred Styling for Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor */
-
     body {
-      background-color: #fff8e1; /* soft golden background */
+      background-color: #fff8e1;
       font-family: 'Lora', serif;
-      color: #4b2e83; /* deep purple for devotion */
+      color: #4b2e83;
       margin: 0;
       padding: 0;
       text-align: center;
@@ -54,10 +52,7 @@
       margin-top: 40px;
     }
 
-    /* ============================= */
-    /* Loading Screen (Vel + Peacocks) */
-    /* ============================= */
-
+    /* Loading Screen */
     #loading {
       position: fixed;
       top: 0; left: 0;
@@ -103,7 +98,6 @@
       100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
     }
 
-    /* Fade-out effect for loading screen */
     .fade-out {
       animation: fadeOut 2s ease forwards;
     }
@@ -113,7 +107,6 @@
       to   { opacity: 0; visibility: hidden; }
     }
 
-    /* Hide homepage until loaded */
     #homepage {
       display: none;
       animation: fadeIn 2s ease forwards;
@@ -129,12 +122,11 @@
   <!-- Loading Screen -->
   <div id="loading">
     <div class="vel-container">
-      <img src="assets/vel.png" alt="Vel" class="vel">
-      <img src="assets/peacock.png" alt="Peacock" class="peacock peacock1">
-      <img src="assets/peacock.png" alt="Peacock" class="peacock peacock2">
-      <img src="assets/peacock.png" alt="Peacock" class="peacock peacock3">
+      <img src="assets/Vel.avif" alt="Vel" class="vel">
+      <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock1">
+      <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock2">
+      <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock3">
     </div>
-    <!-- Temple bell sound -->
     <audio id="bellSound" autoplay>
       <source src="assets/bell.mp3" type="audio/mpeg">
     </audio>
@@ -168,7 +160,7 @@
 
     <!-- Chant "Om Shanmuka" looping -->
     <audio id="chantSound" autoplay loop>
-      <source src="assets/om-shanmuka.mp3" type="audio/mpeg">
+      <source src="assets/om-shanmukam.mp3" type="audio/mpeg">
     </audio>
   </div>
 
@@ -179,10 +171,8 @@
       const homepage = document.getElementById("homepage");
       const bell = document.getElementById("bellSound");
 
-      // Add fade-out class to loading screen
       loading.classList.add("fade-out");
 
-      // Fade out bell sound
       if (bell) {
         bell.volume = 1.0;
         const fadeAudio = setInterval(() => {
@@ -195,11 +185,10 @@
         }, 200);
       }
 
-      // After fade-out completes, hide loading and show homepage
       setTimeout(() => {
         loading.style.display = "none";
         homepage.style.display = "block";
-      }, 2000); // matches fadeOut duration
+      }, 2000);
     });
   </script>
 </body>
