@@ -6,26 +6,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Stage 1: Start Button -->
+  <!-- Stage 1: Centered start button on sacred gradient -->
   <div id="startButton">
     <button onclick="startExperience()">🙏 Can I come in Sri Subramaniar?</button>
   </div>
 
-  <!-- Stage 2: Loading Screen with Vel + Peacocks + Bell -->
+  <!-- Stage 2: Vel + Tamil blessing + Peacocks orbit + Bell -->
   <div id="loading">
     <div class="vel-container">
       <img src="assets/Vel.avif" alt="Vel" class="vel">
       <p class="vel-text">வேலும் மயிலும் துணை</p>
+
+      <!-- Three peacocks orbiting fully around the Vel -->
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock1">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock2">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock3">
     </div>
+
     <audio id="bellSound">
       <source src="assets/bell.mp3" type="audio/mpeg">
     </audio>
   </div>
 
-  <!-- Stage 3: Homepage with Navigation Bar + Chant -->
+  <!-- Stage 3: Homepage with navigation bar + chant -->
   <div id="homepage">
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -51,11 +54,30 @@
         <img src="assets/Murugan.png" alt="Lord Murugan" class="murugan-img">
       </section>
 
-      <section id="history"><h2>History</h2></section>
-      <section id="pathirikkai"><h2>Pathirikkai</h2></section>
-      <section id="committee"><h2>Committee</h2></section>
-      <section id="location"><h2>Location</h2></section>
-      <section id="contact"><h2>Contact</h2></section>
+      <section id="history" class="centered-section">
+        <h2>History</h2>
+        <p>Coming soon: The divine journey of our temple...</p>
+      </section>
+
+      <section id="pathirikkai" class="centered-section">
+        <h2>Pathirikkai</h2>
+        <p>Coming soon: Sacred announcements and blessings...</p>
+      </section>
+
+      <section id="committee" class="centered-section">
+        <h2>Committee</h2>
+        <p>Coming soon: Meet the devoted caretakers of this sacred space...</p>
+      </section>
+
+      <section id="location" class="centered-section">
+        <h2>Location</h2>
+        <p>Coming soon: Directions and map to reach us...</p>
+      </section>
+
+      <section id="contact" class="centered-section">
+        <h2>Contact</h2>
+        <p>Coming soon: How to connect with us...</p>
+      </section>
     </main>
 
     <footer>
@@ -67,7 +89,7 @@
     </audio>
   </div>
 
-  <!-- Script -->
+  <!-- Script controlling the three stages -->
   <script>
     function startExperience() {
       // Stage 1 → hide start button, show loading
@@ -79,16 +101,18 @@
       const bell = document.getElementById("bellSound");
       const chant = document.getElementById("chantSound");
 
-      // Play bell immediately
+      // Play bell immediately during Stage 2
       if (bell) {
         bell.currentTime = 0;
         bell.loop = true;
+        bell.volume = 1.0;
         bell.play();
       }
 
-      // After 10 seconds → stop bell, hide loading, show homepage, play chant
+      // After 10 seconds → end Stage 2, begin Stage 3
       setTimeout(() => {
         if (bell) bell.pause();
+
         loading.style.display = "none";
         homepage.style.display = "block";
 
