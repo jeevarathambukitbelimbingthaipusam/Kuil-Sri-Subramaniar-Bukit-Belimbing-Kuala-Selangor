@@ -90,7 +90,6 @@
   <script>
     function startExperience() {
       document.getElementById("startButton").style.display = "none";
-      document.getElementById("loading").style.display = "flex";
 
       const loading = document.getElementById("loading");
       const homepage = document.getElementById("homepage");
@@ -100,35 +99,20 @@
       if (bell) {
         bell.currentTime = 0;
         bell.loop = true;
-        bell.volume = 1.0;
         bell.play();
       }
 
       setTimeout(() => {
         if (bell) {
-          let fadeOut = setInterval(() => {
-            if (bell.volume > 0.05) {
-              bell.volume -= 0.05;
-            } else {
-              bell.pause();
-              clearInterval(fadeOut);
-            }
-          }, 200);
+          bell.pause();
         }
 
         loading.style.display = "none";
         homepage.style.display = "block";
 
         if (chant) {
-          chant.volume = 0.0;
+          chant.volume = 0.6;
           chant.play();
-          let fadeIn = setInterval(() => {
-            if (chant.volume < 0.6) {
-              chant.volume += 0.05;
-            } else {
-              clearInterval(fadeIn);
-            }
-          }, 200);
         }
       }, 10000);
     }
