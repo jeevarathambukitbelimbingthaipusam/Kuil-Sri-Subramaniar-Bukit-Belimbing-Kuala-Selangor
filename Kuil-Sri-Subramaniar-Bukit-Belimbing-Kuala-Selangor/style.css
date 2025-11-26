@@ -51,7 +51,7 @@ footer {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: black; /* solid black, no transparency */;
+  background: linear-gradient(to bottom, #ff9933, #660066); /* sacred gradient */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,15 +109,6 @@ footer {
   100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
 
-.fade-out {
-  animation: fadeOut 2s ease forwards;
-}
-
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to   { opacity: 0; visibility: hidden; }
-}
-
 #homepage {
   display: none;
   animation: fadeIn 2s ease forwards;
@@ -133,7 +124,7 @@ footer {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: linear-gradient(to bottom, #ff9933, #660066); /* same gradient */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,4 +157,3 @@ footer {
   from { opacity: 0; transform: scale(0.95); }
   to   { opacity: 1; transform: scale(1); }
 }
-
