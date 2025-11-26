@@ -2,10 +2,10 @@
 .navbar {
   background: linear-gradient(to right, #660066, #ff9933);
   padding: 12px 0;
-  position: fixed;
+  position: sticky; /* stays at top inside homepage */
   top: 0;
   width: 100%;
-  z-index: 10001;
+  z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
