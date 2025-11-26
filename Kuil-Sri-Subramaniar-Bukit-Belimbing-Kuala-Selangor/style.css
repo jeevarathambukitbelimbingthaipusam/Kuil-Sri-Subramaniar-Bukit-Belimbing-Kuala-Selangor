@@ -51,7 +51,7 @@ footer {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: black; /* pure black background */
+  background: linear-gradient(to bottom, #ff9933, #660066);
   display: flex;
   justify-content: center;
   align-items: center;
