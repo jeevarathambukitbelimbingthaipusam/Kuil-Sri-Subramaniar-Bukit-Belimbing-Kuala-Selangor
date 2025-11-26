@@ -57,7 +57,7 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: linear-gradient(to bottom, #ff9933, #660066);
+      background: linear-gradient(to bottom, #ff9933, #660066); /* sacred gradient */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -115,15 +115,6 @@
       100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
     }
 
-    .fade-out {
-      animation: fadeOut 2s ease forwards;
-    }
-
-    @keyframes fadeOut {
-      from { opacity: 1; }
-      to   { opacity: 0; visibility: hidden; }
-    }
-
     #homepage {
       display: none;
       animation: fadeIn 2s ease forwards;
@@ -139,7 +130,7 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: linear-gradient(to bottom, #ff9933, #660066); /* same gradient */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -164,6 +155,13 @@
       border: 5px solid #d4af37;
       border-radius: 10px;
       box-shadow: 0 0 20px #f4a460, 0 0 40px #ffcc00;
+      animation: fadeInMurugan 3s ease forwards;
+      opacity: 0; /* start hidden */
+    }
+
+    @keyframes fadeInMurugan {
+      from { opacity: 0; transform: scale(0.95); }
+      to   { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -230,10 +228,10 @@
       const bell = document.getElementById("bellSound");
       const chant = document.getElementById("chantSound");
 
-      // Play bell immediately (user gesture allows autoplay)
+      // Play bell immediately
       if (bell) {
         bell.currentTime = 0;
-        bell.loop = true; // keep ringing
+        bell.loop = true;
         bell.play();
       }
 
@@ -250,7 +248,7 @@
           chant.volume = 0.6;
           chant.play();
         }
-      }, 10000); // 10 seconds delay
+      }, 10000);
     }
   </script>
 </body>
