@@ -6,12 +6,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Start Button -->
+  <!-- Stage 1: Start Button -->
   <div id="startButton">
     <button onclick="startExperience()">🙏 Can I come in Sri Subramaniar?</button>
   </div>
 
-  <!-- Loading Screen -->
+  <!-- Stage 2: Loading Screen with Vel + Peacocks + Bell -->
   <div id="loading">
     <div class="vel-container">
       <img src="assets/Vel.avif" alt="Vel" class="vel">
@@ -25,9 +25,9 @@
     </audio>
   </div>
 
-  <!-- Homepage -->
+  <!-- Stage 3: Homepage with Navigation Bar + Chant -->
   <div id="homepage">
-    <!-- Navigation Bar (added only here) -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
       <ul>
         <li><a href="#homepage">Home</a></li>
@@ -51,30 +51,11 @@
         <img src="assets/Murugan.png" alt="Lord Murugan" class="murugan-img">
       </section>
 
-      <section id="history">
-        <h2>History</h2>
-        <p>Coming soon: The divine journey of our temple...</p>
-      </section>
-
-      <section id="pathirikkai">
-        <h2>Pathirikkai</h2>
-        <p>Coming soon: Sacred announcements and blessings...</p>
-      </section>
-
-      <section id="committee">
-        <h2>Committee</h2>
-        <p>Coming soon: Meet the devoted caretakers of this sacred space...</p>
-      </section>
-
-      <section id="location">
-        <h2>Location</h2>
-        <p>Coming soon: Directions and map to reach us...</p>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Coming soon: How to connect with us...</p>
-      </section>
+      <section id="history"><h2>History</h2></section>
+      <section id="pathirikkai"><h2>Pathirikkai</h2></section>
+      <section id="committee"><h2>Committee</h2></section>
+      <section id="location"><h2>Location</h2></section>
+      <section id="contact"><h2>Contact</h2></section>
     </main>
 
     <footer>
@@ -89,24 +70,25 @@
   <!-- Script -->
   <script>
     function startExperience() {
+      // Stage 1 → hide start button, show loading
       document.getElementById("startButton").style.display = "none";
+      document.getElementById("loading").style.display = "flex";
 
       const loading = document.getElementById("loading");
       const homepage = document.getElementById("homepage");
       const bell = document.getElementById("bellSound");
       const chant = document.getElementById("chantSound");
 
+      // Play bell immediately
       if (bell) {
         bell.currentTime = 0;
         bell.loop = true;
         bell.play();
       }
 
+      // After 10 seconds → stop bell, hide loading, show homepage, play chant
       setTimeout(() => {
-        if (bell) {
-          bell.pause();
-        }
-
+        if (bell) bell.pause();
         loading.style.display = "none";
         homepage.style.display = "block";
 
