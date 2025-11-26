@@ -1,16 +1,12 @@
-/* Sacred Styling for Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor */
-
-/* General Page Styling */
 body {
-  background-color: #fff8e1; /* soft golden background */
+  background-color: #fff8e1;
   font-family: 'Lora', serif;
-  color: #4b2e83; /* deep purple for devotion */
+  color: #4b2e83;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-/* Header */
 header {
   background: linear-gradient(90deg, #d4af37, #f4a460);
   padding: 30px;
@@ -28,7 +24,6 @@ h1 {
   font-size: 1.2em;
 }
 
-/* Main Content */
 main {
   padding: 40px;
 }
@@ -44,7 +39,6 @@ p {
   line-height: 1.6;
 }
 
-/* Footer */
 footer {
   background-color: #4b2e83;
   color: #fff8e1;
@@ -52,10 +46,7 @@ footer {
   margin-top: 40px;
 }
 
-/* ============================= */
-/* Loading Screen (Vel + Peacocks) */
-/* ============================= */
-
+/* Loading Screen */
 #loading {
   position: fixed;
   top: 0; left: 0;
@@ -73,35 +64,60 @@ footer {
   height: 300px;
 }
 
+/* Static glowing Vel */
 .vel {
   position: absolute;
   top: 50%; left: 50%;
   width: 120px;
   transform: translate(-50%, -50%);
-  animation: spin 4s linear infinite;
+  filter: drop-shadow(0 0 15px gold) drop-shadow(0 0 30px orange);
+  animation: glowPulse 3s ease-in-out infinite;
 }
 
+@keyframes glowPulse {
+  0%   { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange); }
+  50%  { filter: drop-shadow(0 0 25px gold) drop-shadow(0 0 40px orange); }
+  100% { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange); }
+}
+
+/* Tamil phrase under Vel */
+.vel-text {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #d4af37;
+  text-shadow: 0 0 10px #f4a460, 0 0 20px #ffcc00;
+  font-family: 'Lora', serif;
+}
+
+/* Slower, smoother peacock orbit */
 .peacock {
   position: absolute;
   width: 80px;
-  animation: orbit 8s linear infinite;
+  animation: orbit 16s linear infinite;
 }
 
 .peacock1 { animation-delay: 0s; }
-.peacock2 { animation-delay: 2s; }
-.peacock3 { animation-delay: 4s; }
-
-@keyframes spin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
+.peacock2 { animation-delay: 4s; }
+.peacock3 { animation-delay: 8s; }
 
 @keyframes orbit {
   0%   { transform: rotate(0deg) translateX(150px) rotate(0deg); }
   100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
 }
 
-/* Hide homepage until loaded */
+.fade-out {
+  animation: fadeOut 2s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; visibility: hidden; }
+}
+
 #homepage {
   display: none;
   animation: fadeIn 2s ease forwards;
@@ -110,4 +126,43 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/* Start Button Overlay */
+#startButton {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#startButton button {
+  padding: 20px 40px;
+  font-size: 1.5em;
+  background: #d4af37;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-shadow: 0 0 10px #4b2e83;
+  cursor: pointer;
+}
+
+/* Murugan image styling */
+.murugan-img {
+  margin-top: 20px;
+  max-width: 300px;
+  border: 5px solid #d4af37; /* golden frame */
+  border-radius: 10px;
+  box-shadow: 0 0 20px #f4a460, 0 0 40px #ffcc00; /* glowing aura */
+  animation: fadeInMurugan 3s ease forwards;
+  opacity: 0; /* start hidden */
+}
+
+@keyframes fadeInMurugan {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
 }
