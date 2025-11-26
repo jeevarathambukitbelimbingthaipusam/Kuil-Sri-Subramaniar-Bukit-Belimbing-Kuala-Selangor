@@ -39,7 +39,7 @@ body {
   position: fixed;
   inset: 0;
   background: linear-gradient(to bottom, #ff9933, #660066);
-  display: none; /* shown after button click */
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -78,7 +78,7 @@ body {
   text-shadow: 0 0 10px #f4a460, 0 0 20px #ffcc00;
 }
 
-/* Peacocks orbiting around the Vel in a bigger circle */
+/* Peacocks orbiting around the Vel in a bigger circle, evenly spaced */
 .peacock {
   position: absolute;
   top: 50%; left: 50%;
@@ -87,9 +87,11 @@ body {
   transform-origin: center center;
   animation: orbit 14s linear infinite;
 }
+
+/* Each peacock offset by 120° for balance */
 .peacock1 { animation-delay: 0s; }
-.peacock2 { animation-delay: 4.5s; }
-.peacock3 { animation-delay: 9s; }
+.peacock2 { animation-delay: -4.66s; } /* 120° offset */
+.peacock3 { animation-delay: -9.33s; } /* 240° offset */
 
 /* Bigger orbit radius (220px) */
 @keyframes orbit {
