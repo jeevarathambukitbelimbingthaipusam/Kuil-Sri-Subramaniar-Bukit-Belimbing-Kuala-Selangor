@@ -38,7 +38,7 @@ body {
 #loading {
   position: fixed;
   inset: 0;
-  background: linear-gradient(to bottom, #ff9933, #660066); /* sacred vertical gradient */
+  background: linear-gradient(to bottom, #ff9933, #660066);
   display: none; /* shown after button click */
   justify-content: center;
   align-items: center;
@@ -78,7 +78,7 @@ body {
   text-shadow: 0 0 10px #f4a460, 0 0 20px #ffcc00;
 }
 
-/* Peacocks fully orbiting around the Vel (center-based rotation) */
+/* Peacocks orbiting around the Vel in a bigger circle */
 .peacock {
   position: absolute;
   top: 50%; left: 50%;
@@ -91,22 +91,22 @@ body {
 .peacock2 { animation-delay: 4.5s; }
 .peacock3 { animation-delay: 9s; }
 
-/* Orbit uses rotate around center, then offset by radius, then counter-rotate to keep upright */
+/* Bigger orbit radius (220px) */
 @keyframes orbit {
-  0%   { transform: translate(-50%, -50%) rotate(0deg) translateX(160px) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(160px) rotate(-360deg); }
+  0%   { transform: translate(-50%, -50%) rotate(0deg) translateX(220px) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(220px) rotate(-360deg); }
 }
 
 /* Stage 3: Homepage with full sacred gradient and centered content */
 #homepage {
-  display: none; /* appears after Stage 2 */
+  display: none;
   min-height: 100vh;
-  background: linear-gradient(to right, #660066, #ff9933); /* same as navbar */
+  background: linear-gradient(to right, #660066, #ff9933);
   animation: fadeIn 2s ease forwards;
 }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* Navigation Bar (sticky within homepage) */
+/* Navigation Bar */
 .navbar {
   background: linear-gradient(to right, #660066, #ff9933);
   padding: 12px 0;
@@ -128,10 +128,10 @@ body {
 }
 .navbar a:hover { color: #ffd700; }
 
-/* Header and sections centered nicely on gradient */
+/* Header and sections centered nicely */
 header {
   max-width: 900px;
-  margin: 80px auto 20px auto; /* space under navbar */
+  margin: 80px auto 20px auto;
   background: rgba(75, 46, 131, 0.15);
   padding: 30px;
   border-radius: 12px;
@@ -156,14 +156,14 @@ p { max-width: 680px; margin: 10px auto; line-height: 1.6; color: #fff; }
   margin: 20px auto;
 }
 
-/* Footer aligned on gradient */
+/* Footer */
 footer {
   color: #fff;
   padding: 20px;
   margin-top: 20px;
 }
 
-/* Murugan image with glowing aura and centered */
+/* Murugan image glowing aura */
 .murugan-img {
   margin-top: 20px;
   max-width: 320px;
@@ -178,5 +178,5 @@ footer {
   to   { opacity: 1; transform: scale(1); }
 }
 
-/* Smooth scrolling (optional, keeps behavior gentle) */
+/* Smooth scrolling */
 html { scroll-behavior: smooth; }
