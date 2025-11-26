@@ -1,7 +1,3 @@
-html {
-  scroll-behavior: smooth; /* enables smooth scrolling */
-}
-
 body {
   background-color: #fff8e1;
   font-family: 'Lora', serif;
@@ -18,12 +14,30 @@ header {
   text-shadow: 0 0 10px #4b2e83;
 }
 
-h1 { margin: 0; font-size: 2.5em; }
-.subtitle { font-style: italic; font-size: 1.2em; }
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
 
-main { padding: 40px; }
-h2 { color: #d4af37; text-shadow: 0 0 8px #f4a460; }
-p { max-width: 600px; margin: 10px auto; line-height: 1.6; }
+.subtitle {
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+main {
+  padding: 40px;
+}
+
+h2 {
+  color: #d4af37;
+  text-shadow: 0 0 8px #f4a460;
+}
+
+p {
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+}
 
 footer {
   background-color: #4b2e83;
@@ -32,74 +46,114 @@ footer {
   margin-top: 40px;
 }
 
-/* Navigation Bar */
-.navbar {
-  background: linear-gradient(to right, #660066, #ff9933);
-  padding: 12px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10001;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-}
-
-.navbar li { display: inline; }
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  text-shadow: 0 0 5px #d4af37;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover { color: #ffd700; }
-
 /* Loading Screen */
 #loading {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: linear-gradient(to bottom, #ff9933, #660066);
-  display: none;
+  background: linear-gradient(to bottom, #ff9933, #660066); /* sacred gradient */
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  box-shadow: inset 0 0 60px #d4af37;
 }
 
-.vel-container { position: relative; width: 300px; height: 300px; }
+.vel-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
 
-/* Vel fade-in + glow */
+/* Static glowing Vel */
 .vel {
   position: absolute;
   top: 50%; left: 50%;
   width: 120px;
   transform: translate(-50%, -50%);
   filter: drop-shadow(0 0 15px gold) drop-shadow(0 0 30px orange);
-  animation: fadeInVel 3s ease forwards, glowPulse 3s ease-in-out infinite;
-  opacity: 0;
-}
-@keyframes fadeInVel { from { opacity: 0; transform: scale(0.9);} to { opacity: 1; transform: scale(1);} }
-@keyframes glowPulse {
-  0% { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange);}
-  50% { filter: drop-shadow(0 0 25px gold) drop-shadow(0 0 40px orange);}
-  100% { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange);}
+  animation: glowPulse 3s ease-in-out infinite;
 }
 
-/* Tamil blessing fade-in */
+@keyframes glowPulse {
+  0%   { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange); }
+  50%  { filter: drop-shadow(0 0 25px gold) drop-shadow(0 0 40px orange); }
+  100% { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange); }
+}
+
+/* Tamil phrase under Vel */
 .vel-text {
   position: absolute;
-  top: 85%; left: 50%;
+  top: 85%;
+  left: 50%;
   transform: translateX(-50%);
-  font-size
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #d4af37;
+  text-shadow: 0 0 10px #f4a460, 0 0 20px #ffcc00;
+  font-family: 'Lora', serif;
+}
+
+/* Slower, smoother peacock orbit */
+.peacock {
+  position: absolute;
+  width: 80px;
+  animation: orbit 16s linear infinite;
+}
+
+.peacock1 { animation-delay: 0s; }
+.peacock2 { animation-delay: 4s; }
+.peacock3 { animation-delay: 8s; }
+
+@keyframes orbit {
+  0%   { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+#homepage {
+  display: none;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Start Button Overlay */
+#startButton {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to bottom, #ff9933, #660066); /* same gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#startButton button {
+  padding: 20px 40px;
+  font-size: 1.5em;
+  background: #d4af37;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-shadow: 0 0 10px #4b2e83;
+  cursor: pointer;
+}
+
+/* Murugan image styling */
+.murugan-img {
+  margin-top: 20px;
+  max-width: 300px;
+  border: 5px solid #d4af37; /* golden frame */
+  border-radius: 10px;
+  box-shadow: 0 0 20px #f4a460, 0 0 40px #ffcc00; /* glowing aura */
+  animation: fadeInMurugan 3s ease forwards;
+  opacity: 0; /* start hidden */
+}
+
+@keyframes fadeInMurugan {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
