@@ -70,28 +70,45 @@
       height: 300px;
     }
 
+    /* Static glowing Vel */
     .vel {
       position: absolute;
       top: 50%; left: 50%;
       width: 120px;
       transform: translate(-50%, -50%);
-      animation: spin 4s linear infinite;
+      filter: drop-shadow(0 0 15px gold) drop-shadow(0 0 30px orange);
+      animation: glowPulse 3s ease-in-out infinite;
     }
 
+    @keyframes glowPulse {
+      0%   { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange); }
+      50%  { filter: drop-shadow(0 0 25px gold) drop-shadow(0 0 40px orange); }
+      100% { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange); }
+    }
+
+    /* Tamil phrase under Vel */
+    .vel-text {
+      position: absolute;
+      top: 85%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #d4af37;
+      text-shadow: 0 0 10px #f4a460, 0 0 20px #ffcc00;
+      font-family: 'Lora', serif;
+    }
+
+    /* Slower, smoother peacock orbit */
     .peacock {
       position: absolute;
       width: 80px;
-      animation: orbit 8s linear infinite;
+      animation: orbit 16s linear infinite;
     }
 
     .peacock1 { animation-delay: 0s; }
-    .peacock2 { animation-delay: 2s; }
-    .peacock3 { animation-delay: 4s; }
-
-    @keyframes spin {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
+    .peacock2 { animation-delay: 4s; }
+    .peacock3 { animation-delay: 8s; }
 
     @keyframes orbit {
       0%   { transform: rotate(0deg) translateX(150px) rotate(0deg); }
@@ -151,6 +168,7 @@
   <div id="loading">
     <div class="vel-container">
       <img src="assets/Vel.avif" alt="Vel" class="vel">
+      <p class="vel-text">வேலும் மயிலும் துணை</p>
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock1">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock2">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock3">
@@ -208,18 +226,15 @@
         bell.play();
       }
 
-      // Keep loading screen visible for 10 seconds
+      // After 10 seconds, stop bell, show homepage, and play chant
       setTimeout(() => {
-        // Stop bell
         if (bell) {
           bell.pause();
         }
 
-        // Show homepage
         loading.style.display = "none";
         homepage.style.display = "block";
 
-        // Play chant
         if (chant) {
           chant.volume = 0.6;
           chant.play();
