@@ -207,7 +207,36 @@ footer {
  filter: drop-shadow(0 0 5px #ffd700);
 }
 
+/* 🌿 Responsive layout for mobile */
+@media (max-width: 768px) {
+  header, main {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+  .murugan-img {
+    max-width: 90%;
+  }
+
+  .download-button,
+  .directions-button {
+    width: 90%;
+    font-size: 1em;
+  }
+}
+
 /* Smooth scrolling */
 html { scroll-behavior: smooth; }
+
 
 
