@@ -234,9 +234,30 @@ footer {
     font-size: 1em;
   }
 }
+/* Facebook link styling */
+.facebook-link {
+  color: #ffd700;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.facebook-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ff9933;
+}
+.facebook-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 5px #ffd700);
+  vertical-align: middle;
+}
 
 /* Smooth scrolling */
 html { scroll-behavior: smooth; }
+
 
 
 
