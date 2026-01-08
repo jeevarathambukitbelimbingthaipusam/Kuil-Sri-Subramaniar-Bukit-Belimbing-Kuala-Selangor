@@ -1,184 +1,36 @@
-/* Shared type and centering */
-body {
-  margin: 0;
-  font-family: 'Lora', serif;
-  color: #4b2e83;
-  text-align: center;
-}
-
-/* Stage 1: Sacred gradient background + centered glowing button */
-#startButton {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to right, #660066, #ff9933);
-  z-index: 10000;
-}
-#startButton button {
-  padding: 20px 40px;
-  font-size: 1.5em;
-  background: #d4af37;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  text-shadow: 0 0 10px #4b2e83;
-  box-shadow: 0 0 25px rgba(212,175,55,0.7), 0 0 60px rgba(255,153,51,0.5);
-  animation: buttonGlow 3s ease-in-out infinite;
-}
-@keyframes buttonGlow {
-  0%   { box-shadow: 0 0 18px rgba(212,175,55,0.6), 0 0 40px rgba(255,153,51,0.4); }
-  50%  { box-shadow: 0 0 32px rgba(212,175,55,0.9), 0 0 80px rgba(255,153,51,0.7); }
-  100% { box-shadow: 0 0 18px rgba(212,175,55,0.6), 0 0 40px rgba(255,153,51,0.4); }
-}
-
-/* Stage 2: Loading screen with proper alignment and full orbits */
-#loading {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(to bottom, #ff9933, #660066);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.vel-container {
-  position: relative;
-  width: 360px;
-  height: 360px;
-}
-
-/* Vel perfectly centered and glowing */
-.vel {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 140px;
-  transform: translate(-50%, -50%);
-  filter: drop-shadow(0 0 15px gold) drop-shadow(0 0 30px orange);
-  animation: glowPulse 3s ease-in-out infinite;
-}
-@keyframes glowPulse {
-  0%   { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange); }
-  50%  { filter: drop-shadow(0 0 25px gold) drop-shadow(0 0 40px orange); }
-  100% { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange); }
-}
-
-/* Tamil blessing aligned under the Vel */
-.vel-text {
-  position: absolute;
-  left: 50%;
-  top: calc(50% + 100px);
-  transform: translateX(-50%);
-  font-size: 1.4em;
+/* Facebook link styling */
+.facebook-link {
+  color: #ffd700;
   font-weight: bold;
-  color: #d4af37;
-  text-shadow: 0 0 10px #f4a460, 0 0 20px #ffcc00;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-
-/* Peacocks orbiting around the Vel in a bigger circle, evenly spaced */
-.peacock {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 90px;
-  transform: translate(-50%, -50%);
-  transform-origin: center center;
-  animation: orbit 14s linear infinite;
-}
-
-/* Each peacock offset by 120° for balance */
-.peacock1 { animation-delay: 0s; }
-.peacock2 { animation-delay: -4.66s; } /* 120° offset */
-.peacock3 { animation-delay: -9.33s; } /* 240° offset */
-
-/* Bigger orbit radius (220px) */
-@keyframes orbit {
-  0%   { transform: translate(-50%, -50%) rotate(0deg) translateX(220px) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg) translateX(220px) rotate(-360deg); }
-}
-
-/* Stage 3: Homepage with full sacred gradient and centered content */
-#homepage {
-  display: none;
-  min-height: 100vh;
-  background: linear-gradient(to right, #660066, #ff9933);
-  animation: fadeIn 2s ease forwards;
-}
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-/* Navigation Bar */
-.navbar {
-  background: linear-gradient(to right, #660066, #ff9933);
-  padding: 12px 0;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-.navbar ul {
-  list-style: none;
-  margin: 0; padding: 0;
-  display: flex; justify-content: center; gap: 50px;
-}
-.navbar li { display: inline; }
-.navbar a {
-  color: white; text-decoration: none; font-weight: bold; font-size: 1.1em;
-  text-shadow: 0 0 5px #d4af37; transition: color 0.3s ease;
-}
-.navbar a:hover { color: #ffd700; }
-
-/* Header and sections centered nicely */
-header {
-  max-width: 900px;
-  margin: 80px auto 20px auto;
-  background: rgba(75, 46, 131, 0.15);
-  padding: 30px;
-  border-radius: 12px;
-  color: white;
-  text-shadow: 0 0 10px #4b2e83;
-}
-h1 { margin: 0; font-size: 2.6em; }
-.subtitle { font-style: italic; font-size: 1.2em; }
-
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px 20px 60px 20px;
-}
-h2 { color: #ffd700; text-shadow: 0 0 8px #f4a460; }
-p { max-width: 680px; margin: 10px auto; line-height: 1.6; color: #fff; }
-
-.centered-section {
-  background: rgba(75, 46, 131, 0.15);
-  padding: 24px;
-  border-radius: 12px;
-  margin: 20px auto;
-}
-
-/* Footer */
-footer {
+.facebook-link:hover {
   color: #fff;
-  padding: 20px;
-  margin-top: 20px;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ff9933;
+}
+.facebook-icon {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 5px #ffd700);
+  vertical-align: middle;
 }
 
-/* Murugan image glowing aura */
-.murugan-img {
-  margin-top: 20px;
-  max-width: 320px;
-  border: 5px solid #d4af37;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #f4a460, 0 0 40px #ffcc00;
-  animation: fadeInMurugan 3s ease forwards;
-  opacity: 0;
+/* Directions button styling */
+.directions-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(to right, #660066, #ff9933);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #ffd700;
+  transition: all 0.3s ease;
 }
-@keyframes fadeInMurugan {
-  from { opacity: 0; transform: scale(0.95); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-/* Smooth scrolling */
-html { scroll-behavior: smooth; }
+.directions-button:hover {
+  color: #ffd700;
+  box-shadow: 0 0
