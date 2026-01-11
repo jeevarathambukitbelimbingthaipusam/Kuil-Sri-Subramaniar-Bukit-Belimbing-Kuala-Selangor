@@ -5,6 +5,23 @@
   <meta charset="UTF-8">
   <title>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Vel follower styling */
+    #velFollower {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      pointer-events: none;
+      z-index: 99999;
+      filter: drop-shadow(0 0 5px gold) drop-shadow(0 0 10px orange);
+      animation: velPulse 2s ease-in-out infinite;
+    }
+    @keyframes velPulse {
+      0%   { transform: scale(1); filter: drop-shadow(0 0 5px gold) drop-shadow(0 0 10px orange); }
+      50%  { transform: scale(1.1); filter: drop-shadow(0 0 15px gold) drop-shadow(0 0 25px orange); }
+      100% { transform: scale(1); filter: drop-shadow(0 0 5px gold) drop-shadow(0 0 10px orange); }
+    }
+  </style>
 </head>
 <body>
   <!-- Stage 1: Centered start button on sacred gradient -->
@@ -46,7 +63,7 @@
 
     <header>
       <h1>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</h1>
-      <p class="subtitle">A sacred abode of  Sri Subramaniar</p>
+      <p class="subtitle">A sacred abode of Sri Subramaniar</p>
     </header>
 
     <main>
@@ -114,10 +131,11 @@
       <section id="contact" class="centered-section">
         <h2>Contact</h2>
         <p>Stay connected with us through our official Facebook page:</p>
-        <!-- Facebook link --> <a href="https://www.facebook.com/profile.php?id=100080939351094"
+        <!-- Facebook link --> 
+        <a href="https://www.facebook.com/profile.php?id=100080939351094"
         target="_blank" rel="noopener noreferrer" class="facebook-link">
-       <img src="assets/facebook-icon.png" alt="Facebook Icon" class="facebook-icon">
-       Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor
+          <img src="assets/facebook-icon.png" alt="Facebook Icon" class="facebook-icon">
+          Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor
         </a>
       </section>
     </main>
@@ -131,7 +149,10 @@
     </audio>
   </div>
 
-  <!-- Script controlling the three stages -->
+  <!-- Vel follower cursor -->
+  <img src="assets/Vel.png" alt="Vel Cursor" id="velFollower">
+
+  <!-- Script controlling the three stages + Vel follower -->
   <script>
     function startExperience() {
       // Stage 1 → hide start button, show loading
@@ -147,35 +168,4 @@
       if (bell) {
         bell.currentTime = 0;
         bell.loop = true;
-        bell.volume = 1.0;
-        bell.play();
-      }
-
-      // After 10 seconds → end Stage 2, begin Stage 3
-      setTimeout(() => {
-        if (bell) bell.pause();
-
-        loading.style.display = "none";
-        homepage.style.display = "block";
-
-        if (chant) {
-          chant.volume = 0.6;
-          chant.play();
-        }
-      }, 10000);
-    }
-  </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
+        bell.volume = 1.
