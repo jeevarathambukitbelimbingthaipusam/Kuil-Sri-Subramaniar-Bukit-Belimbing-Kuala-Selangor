@@ -5,6 +5,37 @@
   <meta charset="UTF-8">
   <title>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- 🌸 SEO Meta Tags -->
+  <meta name="description" content="Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor — A sacred Hindu temple founded in 1930, offering divine blessings, Thaipusam celebrations, and cultural heritage.">
+  <meta name="keywords" content="Kuil Sri Subramaniar, Bukit Belimbing, Kuala Selangor, Hindu temple, Thaipusam, Jeevaratham, Murugan, Malaysia temples">
+  <meta name="author" content="Kuil Sri Subramaniar Committee">
+
+  <!-- 🌸 Open Graph for Social Sharing -->
+  <meta property="og:title" content="Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor">
+  <meta property="og:description" content="A sacred abode of Lord Murugan in Kuala Selangor, guiding devotees with light and courage.">
+  <meta property="og:image" content="https://kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/assets/Murugan.png">
+  <meta property="og:url" content="https://kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/">
+  <meta property="og:type" content="website">
+
+  <!-- 🌸 Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HinduTemple",
+    "name": "Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kampung Bukit Belimbing",
+      "addressLocality": "Kuala Selangor",
+      "addressRegion": "Selangor",
+      "addressCountry": "MY"
+    },
+    "image": "https://kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/assets/Murugan.png",
+    "url": "https://kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/",
+    "openingHours": "Mo-Su 05:30-21:00"
+  }
+  </script>
 </head>
 <body>
   <!-- Stage 1: Centered start button on sacred gradient -->
@@ -117,53 +148,4 @@
         <!-- Facebook link --> <a href="https://www.facebook.com/profile.php?id=100080939351094"
         target="_blank" rel="noopener noreferrer" class="facebook-link">
        <img src="assets/facebook-icon.png" alt="Facebook Icon" class="facebook-icon">
-       Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor
-        </a>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2025 Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</p>
-    </footer>
-
-    <audio id="chantSound" loop>
-      <source src="assets/om-shanmuka.mp3" type="audio/mpeg">
-    </audio>
-  </div>
-
-  <!-- Script controlling the three stages -->
-  <script>
-    function startExperience() {
-      // Stage 1 → hide start button, show loading
-      document.getElementById("startButton").style.display = "none";
-      document.getElementById("loading").style.display = "flex";
-
-      const loading = document.getElementById("loading");
-      const homepage = document.getElementById("homepage");
-      const bell = document.getElementById("bellSound");
-      const chant = document.getElementById("chantSound");
-
-      // Play bell immediately during Stage 2
-      if (bell) {
-        bell.currentTime = 0;
-        bell.loop = true;
-        bell.volume = 1.0;
-        bell.play();
-      }
-
-      // After 10 seconds → end Stage 2, begin Stage 3
-      setTimeout(() => {
-        if (bell) bell.pause();
-
-        loading.style.display = "none";
-        homepage.style.display = "block";
-
-        if (chant) {
-          chant.volume = 0.6;
-          chant.play();
-        }
-      }, 10000);
-    }
-  </script>
-</body>
-</html>
+       Kuil Sri Subramaniar Buk
