@@ -255,6 +255,10 @@ footer {
   vertical-align: middle;
 }
 
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
 /* 🌿 Set Vel cursor globally */
 body {
   cursor: url('assets/VelCursor.png') 16 16, auto;
@@ -269,8 +273,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Smooth scrolling */
-html { scroll-behavior: smooth; }
 
 
 
