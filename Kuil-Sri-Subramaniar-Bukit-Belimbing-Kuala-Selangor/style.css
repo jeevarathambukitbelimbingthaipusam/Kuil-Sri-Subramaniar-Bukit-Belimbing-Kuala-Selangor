@@ -159,14 +159,15 @@ body {
     display: flex; /* show when toggled */
   }
 
-  .navbar li {
+  /* Only affect navbar items */
+  #navMenu li {
     padding: 12px;
     text-align: center;
     display: block;
     border-bottom: 1px solid #444;
   }
 
-  .navbar a {
+  #navMenu a {
     display: block;
     width: 100%;
     color: #fff;
@@ -230,5 +231,4 @@ footer {
 
 /* Directions button */
 .directions-button {
-  display: inline-block;
-  padding: 12px 24px;
+  display: inline
