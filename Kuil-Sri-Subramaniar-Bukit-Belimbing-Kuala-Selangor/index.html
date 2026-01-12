@@ -32,17 +32,17 @@
   <!-- Stage 3: Homepage with navigation bar + chant -->
   <div id="homepage">
     <!-- Navigation Bar -->
-    <nav class="navbar">
-      <ul>
-        <li><a href="#homepage">Home</a></li>
-        <li><a href="#history">History</a></li>
-        <li><a href="#pathirikkai">Pathirikkai</a></li>
-        <li><a href="#jeevaratham">Jeevaratham</a></li>
-        <li><a href="#committee">Committee</a></li>
-        <li><a href="#location">Temple's Location</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <nav class="navbar"> <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul id="navMenu">
+      <li><a href="#homepage" onclick="closeMenu()">Home</a></li>
+      <li><a href="#history" onclick="closeMenu()">History</a></li>
+      <li><a href="#pathirikkai" onclick="closeMenu()">Pathirikkai</a></li>
+      <li><a href="#jeevaratham" onclick="closeMenu()">Jeevaratham</a></li>
+      <li><a href="#committee" onclick="closeMenu()">Committee</a></li>
+      <li><a href="#location" onclick="closeMenu()">Temple's Location</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul> 
+  </nav>
 
     <header>
       <h1>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</h1>
@@ -165,5 +165,18 @@
       }, 10000);
     }
   </script>
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("show");
+  }
+
+  function closeMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.remove("show");
+  }
+</script>
+
 </body>
 </html>
+
