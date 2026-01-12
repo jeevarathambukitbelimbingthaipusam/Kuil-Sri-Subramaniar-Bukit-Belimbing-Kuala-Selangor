@@ -135,52 +135,6 @@ body {
   cursor: pointer;
 }
 
-/* Mobile curtain menu */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: inline-block; /* show toggle button */
-  }
-
-  #navMenu {
-    display: none; /* hidden by default */
-    flex-direction: column;
-    background: rgba(17, 17, 17, 0.95); /* dark curtain */
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    padding: 20px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    animation: curtainDrop 0.4s ease forwards;
-  }
-
-  #navMenu.show {
-    display: flex; /* show when toggled */
-  }
-
-  /* Only affect navbar items */
-  #navMenu li {
-    padding: 12px;
-    text-align: center;
-    display: block;
-    border-bottom: 1px solid #444;
-  }
-
-  #navMenu li a {
-    display: block;
-    width: 100%;
-    color: #fff;
-    font-size: 1.2em;
-  }
-}
-
-/* Curtain drop animation */
-@keyframes curtainDrop {
-  from { opacity: 0; transform: translateY(-20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 /* Header and sections */
 header {
   max-width: 900px;
@@ -221,4 +175,56 @@ footer {
   border: 5px solid #d4af37;
   border-radius: 10px;
   box-shadow: 0 0 20px #f4a460, 0 0 40px #ffcc00;
-  animation: fadeInMurugan 3s
+  animation: fadeInMurugan 3s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeInMurugan {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Directions button */
+.directions-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(to right, #660066, #ff9933);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #ffd700;
+  transition: all 0.3s ease;
+}
+.directions-button:hover {
+  color: #ffd700;
+  box-shadow: 0 0 25px #ffd700, 0 0 40px #ff9933;
+}
+
+/* Vel icon */
+.vel-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 5px #ffd700);
+}
+
+/* Facebook link */
+.facebook-link {
+  color: #ffd700;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.facebook-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ff9933;
+}
+.facebook-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 5px #ffd700);
+  vertical
