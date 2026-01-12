@@ -108,8 +108,6 @@ body {
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
-
-/* Desktop menu */
 #navMenu {
   list-style: none;
   margin: 0; padding: 0;
@@ -119,8 +117,12 @@ body {
 }
 .navbar li { display: inline; }
 .navbar a {
-  color: white; text-decoration: none; font-weight: bold; font-size: 1.1em;
-  text-shadow: 0 0 5px #d4af37; transition: color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-shadow: 0 0 5px #d4af37;
+  transition: color 0.3s ease;
 }
 .navbar a:hover { color: #ffd700; }
 
@@ -138,13 +140,13 @@ body {
 /* Mobile curtain menu */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: inline-block; /* show toggle button */
+    display: inline-block;
   }
 
   #navMenu {
-    display: none; /* hidden by default */
+    display: none;
     flex-direction: column;
-    background: rgba(17, 17, 17, 0.95); /* dark curtain */
+    background: rgba(17, 17, 17, 0.95);
     position: absolute;
     top: 60px;
     left: 0;
@@ -156,10 +158,9 @@ body {
   }
 
   #navMenu.show {
-    display: flex; /* show when toggled */
+    display: flex;
   }
 
-  /* Only affect navbar items */
   #navMenu li {
     padding: 12px;
     text-align: center;
@@ -174,11 +175,35 @@ body {
     font-size: 1.2em;
   }
 }
-
-/* Curtain drop animation */
 @keyframes curtainDrop {
   from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Vel icon */
+.vel-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 8px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 5px #ffd700);
+}
+
+/* Facebook icon */
+.facebook-icon {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 5px #ffd700);
+}
+
+/* Prevent icon stretching */
+.download-button img,
+.facebook-link img {
+  width: auto;
+  height: auto;
+  max-height: 28px;
+  vertical-align: middle;
 }
 
 /* Header and sections */
@@ -220,5 +245,4 @@ footer {
   max-width: 320px;
   border: 5px solid #d4af37;
   border-radius: 10px;
-  box-shadow: 0 0 20px #f4a460, 0 0 40px #ffcc00;
-  animation: fadeInMurugan 3s
+  box-shadow: 0 0 20px #f4a460, 0 
