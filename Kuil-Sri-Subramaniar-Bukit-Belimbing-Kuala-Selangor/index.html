@@ -7,44 +7,46 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Stage 1: Centered start button -->
+  <!-- Stage 1: Centered start button on sacred gradient -->
   <div id="startButton">
     <button onclick="startExperience()">🙏 Can I come in Sri Subramaniar?</button>
   </div>
 
-  <!-- Stage 2: Vel + Peacocks + Bell -->
+  <!-- Stage 2: Vel + Tamil blessing + Peacocks orbit + Bell -->
   <div id="loading">
     <div class="vel-container">
       <img src="assets/Vel.avif" alt="Vel" class="vel">
       <p class="vel-text">வேலும் மயிலும் துணை</p>
+
+      <!-- Three peacocks orbiting fully around the Vel -->
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock1">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock2">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock3">
     </div>
+
     <audio id="bellSound">
       <source src="assets/bell.mp3" type="audio/mpeg">
     </audio>
   </div>
 
-  <!-- Stage 3: Homepage -->
+  <!-- Stage 3: Homepage with navigation bar + chant -->
   <div id="homepage">
     <!-- Navigation Bar -->
     <nav class="navbar">
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <ul id="navMenu">
-        <li><a href="#homepage" onclick="closeMenu()">Home</a></li>
-        <li><a href="#history" onclick="closeMenu()">History</a></li>
-        <li><a href="#pathirikkai" onclick="closeMenu()">Pathirikkai</a></li>
-        <li><a href="#jeevaratham" onclick="closeMenu()">Jeevaratham</a></li>
-        <li><a href="#committee" onclick="closeMenu()">Committee</a></li>
-        <li><a href="#location" onclick="closeMenu()">Temple's Location</a></li>
-        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+      <ul>
+        <li><a href="#homepage">Home</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#pathirikkai">Pathirikkai</a></li>
+        <li><a href="#jeevaratham">Jeevaratham</a></li>
+        <li><a href="#committee">Committee</a></li>
+        <li><a href="#location">Temple's Location</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
     <header>
       <h1>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</h1>
-      <p class="subtitle">A sacred abode of Sri Subramaniar</p>
+      <p class="subtitle">A sacred abode of  Sri Subramaniar</p>
     </header>
 
     <main>
@@ -62,6 +64,7 @@
       <section id="pathirikkai" class="centered-section">
         <h2>Pathirikkai</h2>
         <p>Thaipusam Pathirikkai 2026:</p>
+        <!-- Open PDF in browser -->
         <a href="assets/ThaipusamPathirikkai2026.pdf"
           target="_blank" 
           rel="noopener noreferrer" 
@@ -75,6 +78,7 @@
       <section id="jeevaratham" class="centered-section">
         <h2>Jeevaratham</h2>
         <p>Coming soon: Details and live location of the sacred Jeevaratham Oorvalam...</p>
+        <!-- Two Jeevaratham images --> 
         <img src="assets/Jeevaratham1.png" alt="Jeevaratham Image 1" class="murugan-img">
         <img src="assets/Jeevaratham2.png" alt="Jeevaratham Image 2" class="murugan-img">
       </section>
@@ -87,6 +91,8 @@
       <section id="location" class="centered-section">
         <h2>Temple's Location</h2>
         <p>Directions and map to reach us...</p>
+
+        <!-- Google Maps embed with temple marker -->
         <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.8080172171217!2d101.2724668747314!3d3.396980696577616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc8b0011734ec3%3A0x4de593b5639091c1!2sKuil%20Sri%20Subramaniar%20Bukit%20Belimbing%2C%20Kuala%20Selangor!5e0!3m2!1sen!2smy!4v1767895590501!5m2!1sen!2smy"
         width="600" 
@@ -96,6 +102,7 @@
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
         </iframe> 
+        <!-- Get Directions button --> 
         <div style="margin-top:20px;">
           <a href="https://www.google.com/maps/dir/?api=1&destination=Kuil+Sri+Subramaniar+Bukit+Belimbing+Kuala+Selangor"
             target="_blank" rel="noopener noreferrer" class="directions-button"> 
@@ -107,16 +114,16 @@
       <section id="contact" class="centered-section">
         <h2>Contact</h2>
         <p>Stay connected with us through our official Facebook page:</p>
-        <a href="https://www.facebook.com/profile.php?id=100080939351094"
+        <!-- Facebook link --> <a href="https://www.facebook.com/profile.php?id=100080939351094"
         target="_blank" rel="noopener noreferrer" class="facebook-link">
-          <img src="assets/facebook-icon.png" alt="Facebook Icon" class="facebook-icon">
-          Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor
+       <img src="assets/facebook-icon.png" alt="Facebook Icon" class="facebook-icon">
+       Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor
         </a>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2026 Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</p>
+      <p>&copy; 2025 Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</p>
     </footer>
 
     <audio id="chantSound" loop>
@@ -124,9 +131,10 @@
     </audio>
   </div>
 
-  <!-- Scripts -->
+  <!-- Script controlling the three stages -->
   <script>
     function startExperience() {
+      // Stage 1 → hide start button, show loading
       document.getElementById("startButton").style.display = "none";
       document.getElementById("loading").style.display = "flex";
 
@@ -135,6 +143,7 @@
       const bell = document.getElementById("bellSound");
       const chant = document.getElementById("chantSound");
 
+      // Play bell immediately during Stage 2
       if (bell) {
         bell.currentTime = 0;
         bell.loop = true;
@@ -142,27 +151,31 @@
         bell.play();
       }
 
+      // After 10 seconds → end Stage 2, begin Stage 3
       setTimeout(() => {
         if (bell) bell.pause();
+
         loading.style.display = "none";
         homepage.style.display = "block";
+
         if (chant) {
           chant.volume = 0.6;
           chant.play();
         }
       }, 10000);
     }
-
-    function toggleMenu() {
-      const menu = document.getElementById("navMenu");
-      menu.classList.toggle("show");
-    }
-
-    function closeMenu() {
-      const menu = document.getElementById("navMenu");
-      menu.classList.remove("show");
-    }
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
