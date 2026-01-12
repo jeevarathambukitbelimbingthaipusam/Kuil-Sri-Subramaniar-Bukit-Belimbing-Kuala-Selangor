@@ -270,7 +270,62 @@ body {
   transition: all 0.3s ease;
 }
 
+  /* 🌿 Mobile curtain menu toggle */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+}
 
+/* 🌿 Mobile curtain menu behavior */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-block;
+  }
 
+  #navMenu {
+    display: none;
+    flex-direction: column;
+    background: rgba(17, 17, 17, 0.95);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 20px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    animation: curtainDrop 0.4s ease forwards;
+  }
+
+  #navMenu.show {
+    display: flex;
+  }
+
+  #navMenu li {
+    padding: 12px;
+    text-align: center;
+    display: block;
+    border-bottom: 1px solid #444;
+  }
+
+  #navMenu li a {
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-size: 1.2em;
+  }
+}
+
+@keyframes curtainDrop {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+  
 /* Smooth scrolling */
 html { scroll-behavior: smooth; }
+
