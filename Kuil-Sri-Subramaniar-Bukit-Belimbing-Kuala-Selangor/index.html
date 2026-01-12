@@ -7,29 +7,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Stage 1: Centered start button on sacred gradient -->
+  <!-- Stage 1: Centered start button -->
   <div id="startButton">
     <button onclick="startExperience()">🙏 Can I come in Sri Subramaniar?</button>
   </div>
 
-  <!-- Stage 2: Vel + Tamil blessing + Peacocks orbit + Bell -->
+  <!-- Stage 2: Vel + Peacocks + Bell -->
   <div id="loading">
     <div class="vel-container">
       <img src="assets/Vel.avif" alt="Vel" class="vel">
       <p class="vel-text">வேலும் மயிலும் துணை</p>
-
-      <!-- Three peacocks orbiting fully around the Vel -->
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock1">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock2">
       <img src="assets/Peacock.png" alt="Peacock" class="peacock peacock3">
     </div>
-
     <audio id="bellSound">
       <source src="assets/bell.mp3" type="audio/mpeg">
     </audio>
   </div>
 
-  <!-- Stage 3: Homepage with navigation bar + chant -->
+  <!-- Stage 3: Homepage -->
   <div id="homepage">
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -112,8 +109,8 @@
         <p>Stay connected with us through our official Facebook page:</p>
         <a href="https://www.facebook.com/profile.php?id=100080939351094"
         target="_blank" rel="noopener noreferrer" class="facebook-link">
-       <img src="assets/facebook-icon.png" alt="Facebook Icon" class="facebook-icon">
-       Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor
+          <img src="assets/facebook-icon.png" alt="Facebook Icon" class="facebook-icon">
+          Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor
         </a>
       </section>
     </main>
@@ -127,7 +124,7 @@
     </audio>
   </div>
 
-  <!-- Script controlling the three stages -->
+  <!-- Scripts -->
   <script>
     function startExperience() {
       document.getElementById("startButton").style.display = "none";
