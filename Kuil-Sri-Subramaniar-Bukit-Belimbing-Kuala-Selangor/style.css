@@ -174,6 +174,12 @@ body {
     color: #fff;
     font-size: 1.2em;
   }
+
+  /* Mobile iframe resize */
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
 }
 @keyframes curtainDrop {
   from { opacity: 0; transform: translateY(-20px); }
@@ -206,6 +212,16 @@ body {
   vertical-align: middle;
 }
 
+/* Default iframe styling (desktop/laptop) */
+iframe {
+  width: 600px;
+  height: 450px;
+  border: 0;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #f4a460, 0 0 40px #ffcc00;
+}
+
 /* Header and sections */
 header {
   max-width: 900px;
@@ -226,23 +242,4 @@ main {
 h2 { color: #ffd700; text-shadow: 0 0 8px #f4a460; }
 p { max-width: 680px; margin: 10px auto; line-height: 1.6; color: #fff; }
 .centered-section {
-  background: rgba(75, 46, 131, 0.15);
-  padding: 24px;
-  border-radius: 12px;
-  margin: 20px auto;
-}
-
-/* Footer */
-footer {
-  color: #fff;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-/* Murugan image */
-.murugan-img {
-  margin-top: 20px;
-  max-width: 320px;
-  border: 5px solid #d4af37;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #f4a460, 0 
+  background:
