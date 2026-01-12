@@ -4,7 +4,6 @@ body {
   font-family: 'Lora', serif;
   color: #4b2e83;
   text-align: center;
-  cursor: url('assets/VelCursor.cur'), auto;
 }
 
 /* Stage 1: Sacred gradient background + centered glowing button */
@@ -35,7 +34,7 @@ body {
   100% { box-shadow: 0 0 18px rgba(212,175,55,0.6), 0 0 40px rgba(255,153,51,0.4); }
 }
 
-/* Stage 2: Loading screen */
+/* Stage 2: Loading screen with proper alignment and full orbits */
 #loading {
   position: fixed;
   inset: 0;
@@ -45,11 +44,14 @@ body {
   align-items: center;
   z-index: 9999;
 }
+
 .vel-container {
   position: relative;
   width: 360px;
   height: 360px;
 }
+
+/* Vel perfectly centered and glowing */
 .vel {
   position: absolute;
   top: 50%; left: 50%;
@@ -63,6 +65,8 @@ body {
   50%  { filter: drop-shadow(0 0 25px gold) drop-shadow(0 0 40px orange); }
   100% { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange); }
 }
+
+/* Tamil blessing aligned under the Vel */
 .vel-text {
   position: absolute;
   left: 50%;
@@ -73,6 +77,8 @@ body {
   color: #d4af37;
   text-shadow: 0 0 10px #f4a460, 0 0 20px #ffcc00;
 }
+
+/* Peacocks orbiting around the Vel in a bigger circle, evenly spaced */
 .peacock {
   position: absolute;
   top: 50%; left: 50%;
@@ -81,15 +87,19 @@ body {
   transform-origin: center center;
   animation: orbit 14s linear infinite;
 }
+
+/* Each peacock offset by 120° for balance */
 .peacock1 { animation-delay: 0s; }
-.peacock2 { animation-delay: -4.66s; }
-.peacock3 { animation-delay: -9.33s; }
+.peacock2 { animation-delay: -4.66s; } /* 120° offset */
+.peacock3 { animation-delay: -9.33s; } /* 240° offset */
+
+/* Bigger orbit radius (220px) */
 @keyframes orbit {
   0%   { transform: translate(-50%, -50%) rotate(0deg) translateX(220px) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg) translateX(220px) rotate(-360deg); }
 }
 
-/* Stage 3: Homepage */
+/* Stage 3: Homepage with full sacred gradient and centered content */
 #homepage {
   display: none;
   min-height: 100vh;
@@ -108,121 +118,19 @@ body {
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
-#navMenu {
+.navbar ul {
   list-style: none;
   margin: 0; padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 50px;
+  display: flex; justify-content: center; gap: 50px;
 }
 .navbar li { display: inline; }
 .navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  text-shadow: 0 0 5px #d4af37;
-  transition: color 0.3s ease;
+  color: white; text-decoration: none; font-weight: bold; font-size: 1.1em;
+  text-shadow: 0 0 5px #d4af37; transition: color 0.3s ease;
 }
 .navbar a:hover { color: #ffd700; }
 
-/* Toggle button */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: white;
-  padding: 10px 16px;
-  cursor: pointer;
-}
-
-/* Mobile curtain menu */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: inline-block;
-  }
-
-  #navMenu {
-    display: none;
-    flex-direction: column;
-    background: rgba(17, 17, 17, 0.95);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    padding: 20px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    animation: curtainDrop 0.4s ease forwards;
-  }
-
-  #navMenu.show {
-    display: flex;
-  }
-
-  #navMenu li {
-    padding: 12px;
-    text-align: center;
-    display: block;
-    border-bottom: 1px solid #444;
-  }
-
-  #navMenu li a {
-    display: block;
-    width: 100%;
-    color: #fff;
-    font-size: 1.2em;
-  }
-
-  /* Mobile iframe resize */
-  iframe {
-    width: 100%;
-    height: 300px;
-  }
-}
-@keyframes curtainDrop {
-  from { opacity: 0; transform: translateY(-20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Vel icon */
-.vel-icon {
-  width: 24px;
-  height: 24px;
-  margin: 0 8px;
-  vertical-align: middle;
-  filter: drop-shadow(0 0 5px #ffd700);
-}
-
-/* Facebook icon */
-.facebook-icon {
-  width: 28px;
-  height: 28px;
-  vertical-align: middle;
-  filter: drop-shadow(0 0 5px #ffd700);
-}
-
-/* Prevent icon stretching */
-.download-button img,
-.facebook-link img {
-  width: auto;
-  height: auto;
-  max-height: 28px;
-  vertical-align: middle;
-}
-
-/* Default iframe styling (desktop/laptop) */
-iframe {
-  width: 600px;
-  height: 450px;
-  border: 0;
-  margin-top: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #f4a460, 0 0 40px #ffcc00;
-}
-
-/* Header and sections */
+/* Header and sections centered nicely */
 header {
   max-width: 900px;
   margin: 80px auto 20px auto;
@@ -234,6 +142,7 @@ header {
 }
 h1 { margin: 0; font-size: 2.6em; }
 .subtitle { font-style: italic; font-size: 1.2em; }
+
 main {
   max-width: 900px;
   margin: 0 auto;
@@ -241,5 +150,113 @@ main {
 }
 h2 { color: #ffd700; text-shadow: 0 0 8px #f4a460; }
 p { max-width: 680px; margin: 10px auto; line-height: 1.6; color: #fff; }
+
 .centered-section {
-  background:
+  background: rgba(75, 46, 131, 0.15);
+  padding: 24px;
+  border-radius: 12px;
+  margin: 20px auto;
+}
+
+/* Footer */
+footer {
+  color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Murugan image glowing aura */
+.murugan-img {
+  margin-top: 20px;
+  max-width: 320px;
+  border: 5px solid #d4af37;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #f4a460, 0 0 40px #ffcc00;
+  animation: fadeInMurugan 3s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeInMurugan {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Directions button styling */
+.directions-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(to right, #660066, #ff9933);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #ffd700;
+  transition: all 0.3s ease;
+}
+
+.directions-button:hover {
+  color: #ffd700;
+  box-shadow: 0 0 25px #ffd700, 0 0 40px #ff9933;
+}
+
+/* Vel icon styling for Pathirikkai button */
+.vel-icon 
+{ width: 24px;
+ height: 24px;
+ margin-right: 8px;
+ vertical-align: middle;
+ filter: drop-shadow(0 0 5px #ffd700);
+}
+
+/* 🌿 Responsive layout for mobile */
+@media (max-width: 768px) {
+  header, main {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+  .murugan-img {
+    max-width: 90%;
+  }
+
+  .download-button,
+  .directions-button {
+    width: 90%;
+    font-size: 1em;
+  }
+}
+/* Facebook link styling */
+.facebook-link {
+  color: #ffd700;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.facebook-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ff9933;
+}
+.facebook-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 5px #ffd700);
+  vertical-align: middle;
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+
+
