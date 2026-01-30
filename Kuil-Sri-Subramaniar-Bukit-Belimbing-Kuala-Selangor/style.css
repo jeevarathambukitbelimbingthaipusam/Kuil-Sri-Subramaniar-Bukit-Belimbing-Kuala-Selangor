@@ -257,9 +257,9 @@ footer {
 
 /* 🌿 Set Vel cursor globally */
 body {
- body {
   cursor: url('assets/VelCursor.cur'), auto;
- }
+}
+
 
 /* ✨ Hover glow effect for sacred buttons */
 .download-button:hover,
@@ -360,6 +360,7 @@ html { scroll-behavior: smooth; }
 }
 
   
+
 
 
 
