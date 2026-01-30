@@ -3,6 +3,10 @@ body, a, button, input, textarea {
   cursor: url('assets/VelCursor.cur'), auto;
 }
 
+/* Force Vel cursor on map containers */ 
+#map, .map, iframe {
+  cursor: url('assets/VelCursor.cur'), auto;
+}
 
 
 
@@ -363,6 +367,7 @@ html { scroll-behavior: smooth; }
 }
 
   
+
 
 
 
