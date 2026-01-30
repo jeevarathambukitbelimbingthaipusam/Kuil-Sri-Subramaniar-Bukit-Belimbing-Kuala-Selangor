@@ -1,3 +1,10 @@
+/* 🌿 Set Vel cursor globally */
+body {
+  cursor: url('assets/VelCursor.cur'), auto;
+}
+
+
+
 /* Shared type and centering */
 body {
   margin: 0;
@@ -255,11 +262,6 @@ footer {
   vertical-align: middle;
 }
 
-/* 🌿 Set Vel cursor globally */
-body {
-  cursor: url('assets/VelCursor.cur'), auto;
-}
-
 
 /* ✨ Hover glow effect for sacred buttons */
 .download-button:hover,
@@ -360,6 +362,7 @@ html { scroll-behavior: smooth; }
 }
 
   
+
 
 
 
