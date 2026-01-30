@@ -1,7 +1,8 @@
 /* 🌿 Set Vel cursor globally */
 body {
-cursor: url('https://www.rw-designer.com/cursor-extern.php?id=373'), auto;
+  cursor: url('assets/VelCursor.cur'), auto;
 }
+
 
 
 
@@ -362,6 +363,7 @@ html { scroll-behavior: smooth; }
 }
 
   
+
 
 
 
