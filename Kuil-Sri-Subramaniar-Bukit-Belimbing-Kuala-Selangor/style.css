@@ -344,5 +344,23 @@ html { scroll-behavior: smooth; }
   color: #fff;
 }
 
+  /* 🌿 Remove side dots from Jeevaratham story list */
+#jeevaratham-story ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+  /* 🌿 Golden teaser line at the end of Jeevaratham story */
+#jeevaratham-story p em {
+  color: #ffd700;
+  font-style: italic;
+  text-shadow: 0 0 8px #f4a460, 0 0 16px #ffcc00;
+  display: block;
+  margin-top: 20px;
+}
+
+  
+
+
 
 
