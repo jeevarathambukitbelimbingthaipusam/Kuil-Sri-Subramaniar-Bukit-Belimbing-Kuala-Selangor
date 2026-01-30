@@ -8,6 +8,11 @@ body, a, button, input, textarea, select, iframe, .map, #map, .clickable {
   cursor: url('assets/VelCursor.cur'), auto; 
 } 
 
+/* Force Vel cursor on all interactive elements */
+body, a, button, input, textarea, map, iframe, select {
+  cursor: url('assets/VelCursor.cur'), auto !important;
+}
+
 
 /* Shared type and centering */
 body {
@@ -366,6 +371,7 @@ html { scroll-behavior: smooth; }
 }
 
   
+
 
 
 
