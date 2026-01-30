@@ -329,3 +329,14 @@ body {
 /* Smooth scrolling */
 html { scroll-behavior: smooth; }
 
+  /* Golden styling for story subheadings */
+#jeevaratham-story h3 {
+  color: #ffd700; /* radiant gold */
+  text-shadow: 0 0 8px #f4a460, 0 0 16px #ffcc00;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+
+
