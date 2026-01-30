@@ -1,10 +1,5 @@
-/* 🌿 Apply Vel cursor everywhere, even on clickable elements */
-body, a, button, input, textarea {
-  cursor: url('assets/VelCursor.cur'), auto;
-}
-
-/* Force Vel cursor on map containers */ 
-#map, .map, iframe {
+/* 🌿 Global Vel cursor override */
+body, a, button, input, textarea, select, iframe, .map, #map, .clickable {
   cursor: url('assets/VelCursor.cur'), auto;
 }
 
@@ -367,6 +362,7 @@ html { scroll-behavior: smooth; }
 }
 
   
+
 
 
 
