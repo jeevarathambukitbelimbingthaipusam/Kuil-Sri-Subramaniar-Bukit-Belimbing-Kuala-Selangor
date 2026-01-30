@@ -338,5 +338,11 @@ html { scroll-behavior: smooth; }
   font-size: 1.4em;
 }
 
+/* 🌿 Make Jeevaratham story text white */
+#jeevaratham-story li,
+#jeevaratham-story p {
+  color: #fff;
+}
+
 
 
