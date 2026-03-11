@@ -212,27 +212,24 @@
     menu.classList.remove("show");
   }
 
- <div id="visitor-counter">
-  <span class="icon">👁️</span>
-  <span class="label">Visitors</span>
-  <span id="visitor-count">loading...</span>
+<div id="visitor-counter">
+  👁️ Visitors <span id="visitor-count">loading...</span>
 </div>
 
 <script>
-// Visitor tally spell
 fetch('https://api.countapi.xyz/hit/kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/visits')
   .then(res => res.json())
   .then(data => {
     document.getElementById('visitor-count').innerText = data.value;
   })
-  .catch(err => {
-    console.error("Visitor counter failed:", err);
-  });
+  .catch(err => console.error("Visitor counter failed:", err));
 </script>
+
 
 
 </body>
 </html>
+
 
 
 
