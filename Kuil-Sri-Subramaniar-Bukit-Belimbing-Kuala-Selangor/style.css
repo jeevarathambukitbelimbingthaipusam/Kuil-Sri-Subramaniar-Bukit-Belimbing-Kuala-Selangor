@@ -370,25 +370,22 @@ html { scroll-behavior: smooth; }
   margin-top: 20px;
 }
 
-
-#visitor-counter {
+/* Discreet Visitor Counter */
+.visitor-counter {
   position: fixed;
-  bottom: 5px;
-  right: 5px;
-  font-size: 14px;
-  color: white;   /* visible on dark background */
-  background: rgba(0,0,0,0.5);
-  padding: 4px 8px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0.4; /* 60% transparent */
+  transform: scale(0.7); /* Shrinks it down */
+  transform-origin: bottom right;
+  z-index: 1000; 
+  transition: opacity 0.3s ease; 
 }
 
-#visitor-counter:hover {
-  color: goldenrod;
-  background: rgba(0,0,0,0.7);
+.visitor-counter:hover {
+  opacity: 1; /* Fully visible when you hover over it */
 }
+
 
 
 
@@ -396,6 +393,7 @@ html { scroll-behavior: smooth; }
 
 
   
+
 
 
 
