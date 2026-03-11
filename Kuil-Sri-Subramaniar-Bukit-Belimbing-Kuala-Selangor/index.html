@@ -212,21 +212,28 @@
     menu.classList.remove("show");
   }
 
-  <!-- Visitor Counter (hidden in bottom right) -->
-  <div id="visitor-count">Visitors: loading...</div>
+ <div id="visitor-counter">
+  <span class="icon">👁️</span>
+  <span class="label">Visitors</span>
+  <span id="visitor-count">loading...</span>
+</div>
 
-  <script>
-  // CountAPI visitor counter
-  fetch('https://api.countapi.xyz/hit/kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/visits')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('visitor-count').innerText = "Visitors: " + data.value;
-    });
-    
+<script>
+// Visitor tally spell
+fetch('https://api.countapi.xyz/hit/kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/visits')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('visitor-count').innerText = data.value;
+  })
+  .catch(err => {
+    console.error("Visitor counter failed:", err);
+  });
 </script>
+
 
 </body>
 </html>
+
 
 
 
