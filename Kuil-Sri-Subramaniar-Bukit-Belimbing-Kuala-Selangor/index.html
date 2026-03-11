@@ -212,11 +212,13 @@
     menu.classList.remove("show");
   }
 
+<!-- Visitor Counter -->
 <div id="visitor-counter">
   👁️ Visitors <span id="visitor-count">loading...</span>
 </div>
 
 <script>
+// Visitor tally spell
 fetch('https://api.countapi.xyz/hit/kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/visits')
   .then(res => res.json())
   .then(data => {
@@ -225,10 +227,10 @@ fetch('https://api.countapi.xyz/hit/kuilsrisubramaniarbukitbelimbingkualaselango
   .catch(err => console.error("Visitor counter failed:", err));
 </script>
 
-
-
 </body>
 </html>
+
+
 
 
 
