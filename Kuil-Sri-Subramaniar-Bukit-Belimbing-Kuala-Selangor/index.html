@@ -212,12 +212,22 @@
     menu.classList.remove("show");
   }
 
+  <!-- Visitor Counter (hidden in bottom right) -->
+  <div id="visitor-count">Visitors: loading...</div>
 
+  <script>
+  // CountAPI visitor counter
+  fetch('https://api.countapi.xyz/hit/kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/visits')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('visitor-count').innerText = "Visitors: " + data.value;
+    });
     
 </script>
 
 </body>
 </html>
+
 
 
 
