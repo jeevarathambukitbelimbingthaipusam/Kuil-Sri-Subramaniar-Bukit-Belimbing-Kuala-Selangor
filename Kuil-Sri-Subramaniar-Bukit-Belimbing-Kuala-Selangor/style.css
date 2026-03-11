@@ -371,10 +371,25 @@ html { scroll-behavior: smooth; }
 }
 
 
+#visitor-count {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  font-size: 10px;
+  color: rgba(0,0,0,0.2);   /* faint shadow */
+  opacity: 0.3;             /* semi-transparent */
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+#visitor-count:hover {
+  color: goldenrod;          /* divine golden glow */
+  opacity: 1;                /* fully visible */
+}
 
 
 
   
+
 
 
 
