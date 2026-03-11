@@ -370,7 +370,25 @@ html { scroll-behavior: smooth; }
   margin-top: 20px;
 }
 
+
+#visitor-count {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.2); /* faint shadow */
+  transition: color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.3; /* semi-transparent */
+}
+
+#visitor-count:hover {
+  color: #444;   /* darker when hovered */
+  opacity: 1;    /* fully visible */
+}
+
+
   
+
 
 
 
