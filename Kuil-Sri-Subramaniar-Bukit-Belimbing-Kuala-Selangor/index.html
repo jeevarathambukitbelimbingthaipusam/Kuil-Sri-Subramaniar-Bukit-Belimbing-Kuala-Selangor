@@ -212,23 +212,13 @@
     menu.classList.remove("show");
   }
 
-<!-- Visitor Counter -->
-<div id="visitor-counter">
-  👁️ Visitors <span id="visitor-count">loading...</span>
-</div>
-
-<script>
-// Visitor tally spell
-fetch('https://api.countapi.xyz/hit/kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/visits')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('visitor-count').innerText = data.value;
-  })
-  .catch(err => console.error("Visitor counter failed:", err));
-</script>
+<div class="visitor-counter">
+    <img src="https://api.visitorbadge.io/api/visitors?path=kuil-sri-subramaniar-bukit-belimbing&label=Visits&labelColor=%23333333&countColor=%23f4a460" alt="Visitor Counter">
+  </div>
 
 </body>
 </html>
+
 
 
 
