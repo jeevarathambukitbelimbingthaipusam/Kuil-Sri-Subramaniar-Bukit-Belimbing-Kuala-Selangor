@@ -376,17 +376,27 @@ html { scroll-behavior: smooth; }
   bottom: 5px;
   right: 5px;
   font-size: 14px;
-  color: white;   /* make it visible first */
+  color: white;   /* visible on dark background */
   background: rgba(0,0,0,0.5);
   padding: 4px 8px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#visitor-counter:hover {
+  color: goldenrod;
+  background: rgba(0,0,0,0.7);
 }
 
 
 
 
 
+
   
+
 
 
 
