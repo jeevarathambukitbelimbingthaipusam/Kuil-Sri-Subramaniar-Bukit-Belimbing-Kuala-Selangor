@@ -4,6 +4,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</title>
+  
+  <!-- SEO Meta Tags for Google & WhatsApp Sharing -->
+  <meta name="description" content="Official website of Kuil Sri Subramaniar Bukit Belimbing, Kuala Selangor. View the Thaipusam Pathirikkai, live Jeevaratham location, temple history, and directions.">
+  <meta name="keywords" content="Kuil Sri Subramaniar, Bukit Belimbing, Kuala Selangor, Thaipusam, Jeevaratham, Murugan Temple Malaysia">
+  <meta property="og:title" content="Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor">
+  <meta property="og:description" content="A sacred abode of Sri Subramaniar. Explore the miraculous story of the Jeevaratham, Thaipusam Pathirikkai, and temple directions.">
+  <meta property="og:url" content="https://kuilsrisubramaniarbukitbelimbingkualaselangor.vercel.app/">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="assets/Vel.avif">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,141 +41,328 @@
 
   <!-- Stage 3: Homepage with navigation bar + chant -->
   <div id="homepage">
+    
+    <!-- Floating Quick Controls: Language Toggle & Mute/Unmute -->
+    <div class="floating-controls">
+      <button id="langBtn" class="control-btn" onclick="toggleLanguage()" title="Switch Language / மொழியை மாற்றவும்">
+        🌐 தமிழ்
+      </button>
+      <button id="muteBtn" class="control-btn" onclick="toggleAudio()" title="Mute / Unmute Chant">
+        🔊
+      </button>
+    </div>
+
     <!-- Navigation Bar -->
-    <nav class="navbar"> <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <ul id="navMenu">
-      <li><a href="#homepage" onclick="closeMenu()">Home</a></li>
-      <li><a href="#history" onclick="closeMenu()">History</a></li>
-      <li><a href="#pathirikkai" onclick="closeMenu()">Pathirikkai</a></li>
-      <li><a href="#jeevaratham" onclick="closeMenu()">Jeevaratham</a></li>
-      <li><a href="#committee" onclick="closeMenu()">Committee</a></li>
-      <li><a href="#location" onclick="closeMenu()">Temple's Location</a></li>
-      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-    </ul> 
-  </nav>
+    <nav class="navbar"> 
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="navMenu">
+        <li>
+          <a href="#homepage" onclick="closeMenu()">
+            <span class="lang-en">Home</span>
+            <span class="lang-ta" style="display:none;">முகப்பு</span>
+          </a>
+        </li>
+        <li>
+          <a href="#history" onclick="closeMenu()">
+            <span class="lang-en">History</span>
+            <span class="lang-ta" style="display:none;">வரலாறு</span>
+          </a>
+        </li>
+        <li>
+          <a href="#pathirikkai" onclick="closeMenu()">
+            <span class="lang-en">Pathirikkai</span>
+            <span class="lang-ta" style="display:none;">பத்திரிகை</span>
+          </a>
+        </li>
+        <li>
+          <a href="#jeevaratham" onclick="closeMenu()">
+            <span class="lang-en">Jeevaratham</span>
+            <span class="lang-ta" style="display:none;">ஜீவரதம்</span>
+          </a>
+        </li>
+        <li>
+          <a href="#committee" onclick="closeMenu()">
+            <span class="lang-en">Committee</span>
+            <span class="lang-ta" style="display:none;">நிர்வாகம்</span>
+          </a>
+        </li>
+        <li>
+          <a href="#location" onclick="closeMenu()">
+            <span class="lang-en">Temple's Location</span>
+            <span class="lang-ta" style="display:none;">ஆலய இருப்பிடம்</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" onclick="closeMenu()">
+            <span class="lang-en">Contact</span>
+            <span class="lang-ta" style="display:none;">தொடர்புக்கு</span>
+          </a>
+        </li>
+      </ul> 
+    </nav>
 
     <header>
-      <h1>Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</h1>
-      <p class="subtitle">A sacred abode of  Sri Subramaniar</p>
+      <h1>
+        <span class="lang-en">Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</span>
+        <span class="lang-ta" style="display:none;">ஸ்ரீ சுப்பிரமணியர் ஆலயம் புக்கிட் பெலிம்பிங் கோல சிலாங்கூர்</span>
+      </h1>
+      <p class="subtitle">
+        <span class="lang-en">A sacred abode of Sri Subramaniar</span>
+        <span class="lang-ta" style="display:none;">ஸ்ரீ சுப்பிரமணியரின் புனித ஆலயம்</span>
+      </p>
     </header>
 
     <main>
+      <!-- Live Thaipusam Countdown Timer -->
+      <section class="countdown-section centered-section">
+        <h2>
+          <span class="lang-en">⏳ Countdown to Thaipusam</span>
+          <span class="lang-ta" style="display:none;">⏳ தைப்பூசத் திருநாள் கவுண்டவுன்</span>
+        </h2>
+        <p class="countdown-subtitle">
+          <span class="lang-en">Preparing for the sacred festival of devotion and light</span>
+          <span class="lang-ta" style="display:none;">பக்தி மற்றும் ஒளியின் புனிதத் திருவிழாவிற்கான தயார்படுத்தல்</span>
+        </p>
+        <div class="countdown-container" id="countdownBox">
+          <div class="time-box">
+            <span id="days">00</span>
+            <small>
+              <span class="lang-en">Days</span>
+              <span class="lang-ta" style="display:none;">நாட்கள்</span>
+            </small>
+          </div>
+          <div class="time-box">
+            <span id="hours">00</span>
+            <small>
+              <span class="lang-en">Hours</span>
+              <span class="lang-ta" style="display:none;">மணி</span>
+            </small>
+          </div>
+          <div class="time-box">
+            <span id="minutes">00</span>
+            <small>
+              <span class="lang-en">Minutes</span>
+              <span class="lang-ta" style="display:none;">நிமிடங்கள்</span>
+            </small>
+          </div>
+          <div class="time-box">
+            <span id="seconds">00</span>
+            <small>
+              <span class="lang-en">Seconds</span>
+              <span class="lang-ta" style="display:none;">வினாடிகள்</span>
+            </small>
+          </div>
+        </div>
+        <p id="festivalLiveMsg" class="festival-live" style="display:none;">
+          🌟 <span class="lang-en">Happy Thaipusam! Vel Vel Muruga!</span>
+          <span class="lang-ta" style="display:none;">இனிய தைப்பூசத் திருநாள் நல்வாழ்த்துக்கள்! வேல் வேல் முருகா!</span> 🌟
+        </p>
+      </section>
+
       <section class="welcome">
-        <h2>Welcome Devotees</h2>
-        <p>May Sri Subramaniar’s vel guide your path with light, courage, and divine blessings.</p>
+        <h2>
+          <span class="lang-en">Welcome Devotees</span>
+          <span class="lang-ta" style="display:none;">பக்தர்களை அன்புடன் வரவேற்கிறோம்</span>
+        </h2>
+        <p>
+          <span class="lang-en">May Sri Subramaniar’s vel guide your path with light, courage, and divine blessings.</span>
+          <span class="lang-ta" style="display:none;">ஸ்ரீ சுப்பிரமணியரின் வேல் உங்கள் பாதையை ஒளி, தைரியம் மற்றும் தெய்வீக ஆசிகளுடன் வழிநடத்தட்டும்.</span>
+        </p>
         <img src="assets/Murugan.png" alt="Lord Murugan" class="murugan-img">
       </section>
 
       <section id="history" class="centered-section">
-        <h2>History</h2>
-        <p>Coming soon: The divine journey of our temple...</p>
+        <h2>
+          <span class="lang-en">History</span>
+          <span class="lang-ta" style="display:none;">ஆலய வரலாறு</span>
+        </h2>
+        <p>
+          <span class="lang-en">Coming soon: The divine journey of our temple...</span>
+          <span class="lang-ta" style="display:none;">விரைவில்: நமது ஆலயத்தின் தெய்வீகப் பயணம்...</span>
+        </p>
       </section>
 
       <section id="pathirikkai" class="centered-section">
-        <h2>Pathirikkai</h2>
-        <p>Thaipusam Pathirikkai 2026:</p>
+        <h2>
+          <span class="lang-en">Pathirikkai</span>
+          <span class="lang-ta" style="display:none;">தைப்பூசப் பத்திரிகை</span>
+        </h2>
+        <p>
+          <span class="lang-en">Thaipusam Pathirikkai 2026:</span>
+          <span class="lang-ta" style="display:none;">தைப்பூசப் பத்திரிகை 2026:</span>
+        </p>
         <!-- Open PDF in browser -->
-        <a href="assets/ThaipusamPathirikkai2026.pdf"
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="download-button"> 
+        <a href="assets/ThaipusamPathirikkai2026.pdf" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="download-button"> 
           <img src="assets/Vel.avif" alt="Vel Icon" class="vel-icon">
-          📜 View 2026 Thaipusam Pathirikkai 
+          <span class="lang-en">📜 View 2026 Thaipusam Pathirikkai</span>
+          <span class="lang-ta" style="display:none;">📜 2026 தைப்பூசப் பத்திரிகையைப் பார்க்கவும்</span>
           <img src="assets/Vel.avif" alt="Vel Icon" class="vel-icon">
         </a>
       </section>
 
       <section id="jeevaratham" class="centered-section">
-        <h2>Jeevaratham</h2>
-<p>For details and live location of the sacred Jeevaratham Oorvalam please click below:</p>
-        <a href="https://jeevarathambukitbelimbingthaipusam.github.io/"
-       target="_blank" rel="noopener noreferrer" class="directions-button">
-          📍 View Jeevaratham Live Location 📍
+        <h2>
+          <span class="lang-en">Jeevaratham</span>
+          <span class="lang-ta" style="display:none;">ஜீவரதம்</span>
+        </h2>
+        <p>
+          <span class="lang-en">For details and live location of the sacred Jeevaratham Oorvalam please click below:</span>
+          <span class="lang-ta" style="display:none;">புனித ஜீவரத ஊர்வலத்தின் விவரங்கள் மற்றும் நேரடி இருப்பிடத்தைக் காண கீழே சொடுக்கவும்:</span>
+        </p>
+        <a href="https://jeevarathambukitbelimbingthaipusam.github.io/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="directions-button">
+          <span class="lang-en">📍 View Jeevaratham Live Location 📍</span>
+          <span class="lang-ta" style="display:none;">📍 ஜீவரதத்தின் நேரடி இருப்பிடம் 📍</span>
         </a>
+        
         <!-- Two Jeevaratham images below the button --> 
         <div style="margin-top: 20px;">
-        <img src="assets/Jeevaratham1.png" alt="Jeevaratham Image 1" class="murugan-img">
-        <img src="assets/Jeevaratham2.png" alt="Jeevaratham Image 2" class="murugan-img">
-<section id="jeevaratham-story" class="centered-section">
-  <h2>The Miraculous Story of the Magnificent Jeevaratham (Part 1)</h2>
+          <img src="assets/Jeevaratham1.png" alt="Jeevaratham Image 1" class="murugan-img">
+          <img src="assets/Jeevaratham2.png" alt="Jeevaratham Image 2" class="murugan-img">
+        </div>
 
-  <p><strong>Ratham:</strong> Temple car; chariot; vehicle for deities.<br>
-     <strong>Jeevan:</strong> Soul; uyir; aathma.<br>
-     <strong>Jeevaratham:</strong> A soulful chariot.<br>
-     A chariot that expresses deep emotion, passion, and profound feelings related to spiritual connection.</p>
+        <section id="jeevaratham-story" class="centered-section">
+          <!-- ENGLISH STORY -->
+          <div class="lang-en">
+            <h2>The Miraculous Story of the Magnificent Jeevaratham (Part 1)</h2>
 
-  <h3>What Is Special About the Jeevaratham?</h3>
-  <ul>
-    <li><strong>a)</strong> Unlike Velliratham, Thangaratham, and other rathams that are tied to the material world, the Jeevaratham is free from material attachment. It is attached to the soul.</li>
-    <li><strong>b)</strong> It was not planned, ordered, or purchased with money by the temple management.</li>
-    <li><strong>c)</strong> It was not constructed by professional builders, either locally or from outside India.</li>
-    <li><strong>d)</strong> It was made by a local devotee along with a few of his friends.</li>
-    <li><strong>e)</strong> Apart from wood for the body, plywood was used to make the yazhis and the horses.</li>
-  </ul>
+            <p><strong>Ratham:</strong> Temple car; chariot; vehicle for deities.<br>
+               <strong>Jeevan:</strong> Soul; uyir; aathma.<br>
+               <strong>Jeevaratham:</strong> A soulful chariot.<br>
+               A chariot that expresses deep emotion, passion, and profound feelings related to spiritual connection.</p>
 
-  <h3>How Did It Come About?</h3>
-  <ul>
-    <li><strong>a)</strong> It came into existence because Sri Subramaniar HIMSELF desired to have it made for HIM. (1984)</li>
-    <li><strong>b)</strong> HE appeared in the dream of a local devotee, who possessed wood-working skills, and instructed him to begin making a ratham for HIM.</li>
-    <li><strong>c)</strong> HE assured the devotee not to worry, saying that from the very beginning until completion, everything would be taken care of by HIM HIMSELF.</li>
-    <li><strong>d)</strong> After that the devotee did not know what to do. He just let the time pass and later shared with a neighbour friend who had similar interest.</li>
-    <li><strong>e)</strong> Though they were not sure what exactly to do, they knew they needed money for the project. So, they started saving money and a few other friends contributed monthly.</li>
-    <li><strong>f)</strong> Then, on the next Thaipusam day a MIRACLE happened.</li>
-  </ul>
+            <h3>What Is Special About the Jeevaratham?</h3>
+            <ul>
+              <li><strong>a)</strong> Unlike Velliratham, Thangaratham, and other rathams that are tied to the material world, the Jeevaratham is free from material attachment. It is attached to the soul.</li>
+              <li><strong>b)</strong> It was not planned, ordered, or purchased with money by the temple management.</li>
+              <li><strong>c)</strong> It was not constructed by professional builders, either locally or from outside India.</li>
+              <li><strong>d)</strong> It was made by a local devotee along with a few of his friends.</li>
+              <li><strong>e)</strong> Apart from wood for the body, plywood was used to make the yazhis and the horses.</li>
+            </ul>
 
-  <p><em>What was the MIRACLE ???<br>
-  Will be continued in Part 2.</em></p>
-</section>
+            <h3>How Did It Come About?</h3>
+            <ul>
+              <li><strong>a)</strong> It came into existence because Sri Subramaniar HIMSELF desired to have it made for HIM. (1984)</li>
+              <li><strong>b)</strong> HE appeared in the dream of a local devotee, who possessed wood-working skills, and instructed him to begin making a ratham for HIM.</li>
+              <li><strong>c)</strong> HE assured the devotee not to worry, saying that from the very beginning until completion, everything would be taken care of by HIM HIMSELF.</li>
+              <li><strong>d)</strong> After that the devotee did not know what to do. He just let the time pass and later shared with a neighbour friend who had similar interest.</li>
+              <li><strong>e)</strong> Though they were not sure what exactly to do, they knew they needed money for the project. So, they started saving money and a few other friends contributed monthly.</li>
+              <li><strong>f)</strong> Then, on the next Thaipusam day a MIRACLE happened.</li>
+            </ul>
 
+            <p><em>What was the MIRACLE ???<br>
+            Will be continued in Part 2.</em></p>
+          </div>
+
+          <!-- TAMIL STORY -->
+          <div class="lang-ta" style="display:none;">
+            <h2>மகத்தான ஜீவரதத்தின் அற்புத வரலாறு (பாகம் 1)</h2>
+
+            <p><strong>ரதம்:</strong> தேர்; தெய்வங்களின் வாகனம்.<br>
+               <strong>ஜீவன்:</strong> உயிர்; ஆத்மா.<br>
+               <strong>ஜீவரதம்:</strong> உயிரோட்டமுள்ள புனிதத் தேர்.<br>
+               ஆன்மீகத் தொடர்புடைய ஆழமான உணர்வுகளையும் பக்தியையும் வெளிப்படுத்தும் ஒரு புனித இரதம்.</p>
+
+            <h3>ஜீவரதத்தின் சிறப்பம்சங்கள் என்ன?</h3>
+            <ul>
+              <li><strong>அ)</strong> வெள்ளி ரதம், தங்க ரதம் போன்று உலகியல் பொருட்களால் கட்டப்படாமல், ஆத்மாவோடு இணைந்த புனிதத் தேராக இந்த ஜீவரதம் திகழ்கிறது.</li>
+              <li><strong>ஆ)</strong> இது ஆலய நிர்வாகத்தால் திட்டமிடப்பட்டோ அல்லது பணம் கொடுத்து வாங்கப்பட்டோ உருவாக்கப்பட்டதல்ல.</li>
+              <li><strong>இ)</strong> இது உள்ளூர் அல்லது வெளிநாட்டுத் தொழில்முறை சிற்பிகளால் கட்டப்படவில்லை.</li>
+              <li><strong>ஈ)</strong> இது ஒரு உள்ளூர் பக்தரால் அவரது சில நண்பர்களின் உதவியுடன் உருவாக்கப்பட்டது.</li>
+              <li><strong>உ)</strong> தேரின் உடல் பகுதிக்கு மரமும், யாளிகள் மற்றும் குதிரைகளை உருவாக்க பிளைவுட் (plywood) பலகைகளும் பயன்படுத்தப்பட்டன.</li>
+            </ul>
+
+            <h3>இது எவ்வாறு உருவானது?</h3>
+            <ul>
+              <li><strong>அ)</strong> ஸ்ரீ சுப்பிரமணியப் பெருமானே தனக்காக இத்தேரை உருவாக்க வேண்டும் என்று திருவுளம் கொண்டதால் இது உருவானது. (1984)</li>
+              <li><strong>ஆ)</strong> மரவேலைப்பாடு தெரிந்த ஒரு உள்ளூர் பக்தரின் கனவில் பெருமான் தோன்றி, தனக்காக ஒரு ரதம் செய்யத் தொடங்குமாறு பணித்தார்.</li>
+              <li><strong>இ)</strong> எதைப் பற்றியும் கவலைப்பட வேண்டாம் என்றும், ஆரம்பம் முதல் நிறைவு வரை அனைத்தையும் தானே பார்த்துக் கொள்வதாகவும் பெருமான் உறுதியளித்தார்.</li>
+              <li><strong>ஈ)</strong> அதன் பிறகு என்ன செய்வதென்று தெரியாமல் இருந்த அந்த பக்தர், பின்னர் இதே போன்ற ஆர்வமுள்ள தனது அண்டை வீட்டு நண்பரிடம் இதைப் பகிர்ந்து கொண்டார்.</li>
+              <li><strong>உ)</strong> என்ன செய்வது என்று முழுமையாகத் தெரியாவிட்டாலும், இந்தத் திருப்பணிக்குப் பணம் தேவை என்பதை உணர்ந்து சிறுகச் சிறுகப் பணத்தைச் சேமிக்கத் தொடங்கினர்; மேலும் சில நண்பர்களும் மாதந்தோறும் பங்களித்தனர்.</li>
+              <li><strong>ஊ)</strong> பின்னர், அடுத்த தைப்பூசத் திருநாளில் ஒரு மாபெரும் அற்புதம் நிகழ்ந்தது.</li>
+            </ul>
+
+            <p><em>அந்த அற்புதம் என்ன ???<br>
+            பாகம் 2-ல் தொடரும்...</em></p>
+          </div>
+        </section>
       </section>
 
       <section id="committee" class="centered-section">
-        <h2>Committee</h2>
-        <p>Coming soon: Meet the devoted caretakers of this sacred space...</p>
+        <h2>
+          <span class="lang-en">Committee</span>
+          <span class="lang-ta" style="display:none;">ஆலய நிர்வாகக் குழு</span>
+        </h2>
+        <p>
+          <span class="lang-en">Coming soon: Meet the devoted caretakers of this sacred space...</span>
+          <span class="lang-ta" style="display:none;">விரைவில்: இந்தப் புனித ஆலயத்தின் அர்ப்பணிப்புள்ள நிர்வாகிகளைச் சந்தியுங்கள்...</span>
+        </p>
       </section>
 
       <section id="location" class="centered-section">
-        <h2>Temple's Location</h2>
-        <p>Directions and map to reach us...</p>
+        <h2>
+          <span class="lang-en">Temple's Location</span>
+          <span class="lang-ta" style="display:none;">ஆலய இருப்பிடம்</span>
+        </h2>
+        <p>
+          <span class="lang-en">Directions and map to reach us...</span>
+          <span class="lang-ta" style="display:none;">ஆலயத்தை வந்தடைய வழிகாட்டி மற்றும் வரைபடம்...</span>
+        </p>
 
         <!-- Google Maps embed with temple marker -->
         <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.8080172171217!2d101.2724668747314!3d3.396980696577616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc8b0011734ec3%3A0x4de593b5639091c1!2sKuil%20Sri%20Subramaniar%20Bukit%20Belimbing%2C%20Kuala%20Selangor!5e0!3m2!1sen!2smy!4v1767895590501!5m2!1sen!2smy"
-        width="600" 
-        height="450" 
-        style="border:0; margin-top:20px; border-radius:12px; box-shadow:0 0 20px #f4a460, 0 0 40px #ffcc00;" 
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.8080172171217!2d101.2724668747314!3d3.396980696577616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc8b0011734ec3%3A0x4de593b5639091c1!2sKuil%20Sri%20Subramaniar%20Bukit%20Belimbing%2C%20Kuala%20Selangor!5e0!3m2!1sen!2smy!4v1767895590501!5m2!1sen!2smy"
+          width="600" 
+          height="450" 
+          style="border:0; margin-top:20px; border-radius:12px; box-shadow:0 0 20px #f4a460, 0 0 40px #ffcc00;" 
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
         </iframe> 
+
         <!-- Get Directions button --> 
         <div style="margin-top:20px;">
           <a href="https://www.google.com/maps/dir/?api=1&destination=Kuil+Sri+Subramaniar+Bukit+Belimbing+Kuala+Selangor"
-            target="_blank" rel="noopener noreferrer" class="directions-button"> 
-            🕉 Get Directions 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="directions-button"> 
+            <span class="lang-en">🕉 Get Directions</span>
+            <span class="lang-ta" style="display:none;">🕉 வழித்தடத்தைப் பார்க்க</span>
           </a>
         </div>
       </section>
 
       <section id="contact" class="centered-section">
-        <h2>Contact</h2>
-        <p>Stay connected with us through our official Facebook page:</p>
-        <!-- Facebook link --> <a href="https://www.facebook.com/profile.php?id=100080939351094"
-        target="_blank" rel="noopener noreferrer" class="facebook-link">
-       <img src="assets/facebook-icon.png" alt="Facebook Icon" class="facebook-icon">
-       Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor
+        <h2>
+          <span class="lang-en">Contact</span>
+          <span class="lang-ta" style="display:none;">தொடர்புக்கு</span>
+        </h2>
+        <p>
+          <span class="lang-en">Stay connected with us through our official Facebook page:</span>
+          <span class="lang-ta" style="display:none;">எங்கள் அதிகாரப்பூர்வ முகநூல் (Facebook) பக்கம் வழியாக இணைந்திருங்கள்:</span>
+        </p>
+        <a href="https://www.facebook.com/profile.php?id=100080939351094"
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="facebook-link">
+          <img src="assets/facebook-icon.png" alt="Facebook Icon" class="facebook-icon">
+          Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor
         </a>
       </section>
     </main>
 
     <footer>
       <p>&copy; 2026 Kuil Sri Subramaniar Bukit Belimbing Kuala Selangor</p>
-
- <!-- Subtle Visitor Counter at bottom right of the page -->
+      
+      <!-- Subtle Visitor Counter at bottom right of the page -->
       <div class="visitor-counter">
         <img src="https://api.visitorbadge.io/api/visitors?path=kuil-sri-subramaniar-bukit-belimbing&label=Visits&labelColor=%234b2e83&countColor=%23d4af37" alt="Visitor Counter">
       </div>
-      
     </footer>
 
     <audio id="chantSound" loop>
@@ -173,10 +370,10 @@
     </audio>
   </div>
 
-  <!-- Script controlling the three stages -->
+  <!-- Scripts for Stages, Mobile Menu, Audio Mute/Unmute, Language Toggle, & Countdown -->
   <script>
+    // 1. Three-Stage Entrance Experience
     function startExperience() {
-      // Stage 1 → hide start button, show loading
       document.getElementById("startButton").style.display = "none";
       document.getElementById("loading").style.display = "flex";
 
@@ -185,7 +382,6 @@
       const bell = document.getElementById("bellSound");
       const chant = document.getElementById("chantSound");
 
-      // Play bell immediately during Stage 2
       if (bell) {
         bell.currentTime = 0;
         bell.loop = true;
@@ -193,7 +389,6 @@
         bell.play();
       }
 
-      // After 10 seconds → end Stage 2, begin Stage 3
       setTimeout(() => {
         if (bell) bell.pause();
 
@@ -206,43 +401,97 @@
         }
       }, 10000);
     }
+
+    // 2. Mobile Navigation Menu
+    function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.classList.toggle("show");
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.classList.remove("show");
+    }
+
+    // 3. Mute / Unmute Background Chant
+    function toggleAudio() {
+      const chant = document.getElementById("chantSound");
+      const muteBtn = document.getElementById("muteBtn");
+      if (!chant) return;
+
+      if (chant.muted || chant.paused) {
+        chant.muted = false;
+        chant.play();
+        muteBtn.innerHTML = "🔊";
+        muteBtn.classList.remove("muted");
+      } else {
+        chant.muted = true;
+        muteBtn.innerHTML = "🔇";
+        muteBtn.classList.add("muted");
+      }
+    }
+
+    // 4. Language Toggle (English / Tamil)
+    let currentLang = "en";
+    function toggleLanguage() {
+      const enElements = document.querySelectorAll(".lang-en");
+      const taElements = document.querySelectorAll(".lang-ta");
+      const langBtn = document.getElementById("langBtn");
+
+      if (currentLang === "en") {
+        enElements.forEach(el => el.style.display = "none");
+        taElements.forEach(el => el.style.display = "");
+        langBtn.innerHTML = "🌐 English";
+        currentLang = "ta";
+      } else {
+        taElements.forEach(el => el.style.display = "none");
+        enElements.forEach(el => el.style.display = "");
+        langBtn.innerHTML = "🌐 தமிழ்";
+        currentLang = "en";
+      }
+    }
+
+    // 5. Thaipusam Countdown Timer
+    function updateCountdown() {
+      // Upcoming Thaipusam Dates in Malaysia (MYT +08:00)
+      const thaipusamDates = [
+        new Date("2027-01-22T00:00:00+08:00"),
+        new Date("2028-02-13T00:00:00+08:00")
+      ];
+
+      const now = new Date();
+      let targetDate = thaipusamDates[0];
+
+      // Check if it is currently Thaipusam Day (within 24 hours of start)
+      const oneDayMs = 24 * 60 * 60 * 1000;
+      for (let d of thaipusamDates) {
+        if (now >= d && (now - d) < oneDayMs) {
+          document.getElementById("countdownBox").style.display = "none";
+          document.getElementById("festivalLiveMsg").style.display = "block";
+          return;
+        }
+        if (now < d) {
+          targetDate = d;
+          break;
+        }
+      }
+
+      const diff = targetDate - now;
+      if (diff <= 0) return;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("days").innerText = String(days).padStart(2, "0");
+      document.getElementById("hours").innerText = String(hours).padStart(2, "0");
+      document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
   </script>
-  <script>
-  function toggleMenu() {
-    const menu = document.getElementById("navMenu");
-    menu.classList.toggle("show");
-  }
-
-  function closeMenu() {
-    const menu = document.getElementById("navMenu");
-    menu.classList.remove("show");
-  }
-
-<div class="visitor-counter">
-    <img src="https://api.visitorbadge.io/api/visitors?path=kuil-sri-subramaniar-bukit-belimbing&label=Visits&labelColor=%23333333&countColor=%23f4a460" alt="Visitor Counter">
-  </div>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
