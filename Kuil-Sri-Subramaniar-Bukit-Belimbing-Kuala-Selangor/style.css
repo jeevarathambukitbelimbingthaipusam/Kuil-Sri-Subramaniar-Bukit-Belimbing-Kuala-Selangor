@@ -1,18 +1,7 @@
-/* 🌿 Global Vel cursor override */
-body, a, button, input, textarea, select, iframe, .map, #map, .clickable {
-  cursor: url('assets/VelCursor.cur'), auto;
-}
-
-/* Force Vel cursor on map containers */
-#map, .map, iframe {
-  cursor: url('assets/VelCursor.cur'), auto; 
-} 
-
-/* Force Vel cursor on all interactive elements */
-body, a, button, input, textarea, map, iframe, select {
+/* 🌿 Global Vel cursor override on all elements */
+body, a, button, input, textarea, select, iframe, map, .map, #map, .clickable {
   cursor: url('assets/VelCursor.cur'), auto !important;
 }
-
 
 /* Shared type and centering */
 body {
@@ -20,6 +9,7 @@ body {
   font-family: 'Lora', serif;
   color: #4b2e83;
   text-align: center;
+  overflow-x: hidden;
 }
 
 /* Stage 1: Sacred gradient background + centered glowing button */
@@ -31,7 +21,9 @@ body {
   align-items: center;
   background: linear-gradient(to right, #660066, #ff9933);
   z-index: 10000;
+  padding: 20px;
 }
+
 #startButton button {
   padding: 20px 40px;
   font-size: 1.5em;
@@ -44,6 +36,7 @@ body {
   box-shadow: 0 0 25px rgba(212,175,55,0.7), 0 0 60px rgba(255,153,51,0.5);
   animation: buttonGlow 3s ease-in-out infinite;
 }
+
 @keyframes buttonGlow {
   0%   { box-shadow: 0 0 18px rgba(212,175,55,0.6), 0 0 40px rgba(255,153,51,0.4); }
   50%  { box-shadow: 0 0 32px rgba(212,175,55,0.9), 0 0 80px rgba(255,153,51,0.7); }
@@ -59,6 +52,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  overflow: hidden;
 }
 
 .vel-container {
@@ -70,12 +64,14 @@ body {
 /* Vel perfectly centered and glowing */
 .vel {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   width: 140px;
   transform: translate(-50%, -50%);
   filter: drop-shadow(0 0 15px gold) drop-shadow(0 0 30px orange);
   animation: glowPulse 3s ease-in-out infinite;
 }
+
 @keyframes glowPulse {
   0%   { filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px orange); }
   50%  { filter: drop-shadow(0 0 25px gold) drop-shadow(0 0 40px orange); }
@@ -88,6 +84,7 @@ body {
   left: 50%;
   top: calc(50% + 100px);
   transform: translateX(-50%);
+  width: 100%;
   font-size: 1.4em;
   font-weight: bold;
   color: #d4af37;
@@ -97,7 +94,8 @@ body {
 /* Peacocks orbiting around the Vel in a bigger circle, evenly spaced */
 .peacock {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   width: 90px;
   transform: translate(-50%, -50%);
   transform-origin: center center;
@@ -122,7 +120,46 @@ body {
   background: linear-gradient(to right, #660066, #ff9933);
   animation: fadeIn 2s ease forwards;
 }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* 🔊 & 🌐 Floating Quick Controls (Top-Right) */
+.floating-controls {
+  position: fixed;
+  top: 62px;
+  right: 16px;
+  display: flex;
+  gap: 10px;
+  z-index: 1001;
+}
+
+.control-btn {
+  background: rgba(75, 46, 131, 0.85);
+  color: #ffd700;
+  border: 2px solid #d4af37;
+  border-radius: 30px;
+  padding: 8px 14px;
+  font-size: 0.95em;
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.control-btn:hover {
+  background: #d4af37;
+  color: #4b2e83;
+  box-shadow: 0 0 20px #ffd700, 0 0 35px #ff9933;
+  transform: translateY(-2px);
+}
+
+.control-btn.muted {
+  opacity: 0.7;
+  border-color: #ccc;
+}
 
 /* Navigation Bar */
 .navbar {
@@ -134,17 +171,33 @@ body {
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
+
 .navbar ul {
   list-style: none;
-  margin: 0; padding: 0;
-  display: flex; justify-content: center; gap: 50px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
-.navbar li { display: inline; }
+
+.navbar li {
+  display: inline;
+}
+
 .navbar a {
-  color: white; text-decoration: none; font-weight: bold; font-size: 1.1em;
-  text-shadow: 0 0 5px #d4af37; transition: color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-shadow: 0 0 5px #d4af37;
+  transition: color 0.3s ease;
 }
-.navbar a:hover { color: #ffd700; }
+
+.navbar a:hover {
+  color: #ffd700;
+}
 
 /* Header and sections centered nicely */
 header {
@@ -156,16 +209,35 @@ header {
   color: white;
   text-shadow: 0 0 10px #4b2e83;
 }
-h1 { margin: 0; font-size: 2.6em; }
-.subtitle { font-style: italic; font-size: 1.2em; }
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 1.2em;
+}
 
 main {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px 20px 60px 20px;
 }
-h2 { color: #ffd700; text-shadow: 0 0 8px #f4a460; }
-p { max-width: 680px; margin: 10px auto; line-height: 1.6; color: #fff; }
+
+h2 {
+  color: #ffd700;
+  text-shadow: 0 0 8px #f4a460;
+}
+
+p {
+  max-width: 680px;
+  margin: 10px auto;
+  line-height: 1.6;
+  color: #fff;
+}
 
 .centered-section {
   background: rgba(75, 46, 131, 0.15);
@@ -174,8 +246,61 @@ p { max-width: 680px; margin: 10px auto; line-height: 1.6; color: #fff; }
   margin: 20px auto;
 }
 
+/* ⏳ Thaipusam Countdown Timer Styling */
+.countdown-section {
+  border: 2px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.25);
+}
+
+.countdown-subtitle {
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.time-box {
+  background: linear-gradient(145deg, rgba(102, 0, 102, 0.85), rgba(75, 46, 131, 0.9));
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  padding: 14px 18px;
+  min-width: 85px;
+  box-shadow: 0 0 15px rgba(244, 164, 96, 0.5), inset 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.time-box span {
+  display: block;
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 10px #ff9933;
+}
+
+.time-box small {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.festival-live {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 12px #ff9933;
+}
+
 /* Footer */
 footer {
+  position: relative;
   color: #fff;
   padding: 20px;
   margin-top: 20px;
@@ -191,13 +316,15 @@ footer {
   animation: fadeInMurugan 3s ease forwards;
   opacity: 0;
 }
+
 @keyframes fadeInMurugan {
   from { opacity: 0; transform: scale(0.95); }
   to   { opacity: 1; transform: scale(1); }
 }
 
-/* Directions button styling */
-.directions-button {
+/* Directions & Download buttons base styling */
+.directions-button,
+.download-button {
   display: inline-block;
   padding: 12px 24px;
   background: linear-gradient(to right, #660066, #ff9933);
@@ -207,49 +334,18 @@ footer {
   border-radius: 8px;
   box-shadow: 0 0 15px #ffd700;
   transition: all 0.3s ease;
-}
-
-.directions-button:hover {
-  color: #ffd700;
-  box-shadow: 0 0 25px #ffd700, 0 0 40px #ff9933;
+  box-sizing: border-box;
 }
 
 /* Vel icon styling for Pathirikkai button */
-.vel-icon 
-{ width: 24px;
- height: 24px;
- margin-right: 8px;
- vertical-align: middle;
- filter: drop-shadow(0 0 5px #ffd700);
+.vel-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 6px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 5px #ffd700);
 }
 
-/* 🌿 Responsive layout for mobile */
-@media (max-width: 768px) {
-  header, main {
-    max-width: 100%;
-    padding: 16px;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  iframe {
-    width: 100%;
-    height: 300px;
-  }
-
-  .murugan-img {
-    max-width: 90%;
-  }
-
-  .download-button,
-  .directions-button {
-    width: 90%;
-    font-size: 1em;
-  }
-}
 /* Facebook link styling */
 .facebook-link {
   color: #ffd700;
@@ -258,12 +354,11 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
-.facebook-link:hover {
-  color: #fff;
-  text-shadow: 0 0 10px #ffd700, 0 0 20px #ff9933;
-}
+
 .facebook-icon {
   width: 28px;
   height: 28px;
@@ -271,17 +366,16 @@ footer {
   vertical-align: middle;
 }
 
-
 /* ✨ Hover glow effect for sacred buttons */
 .download-button:hover,
 .directions-button:hover,
 .facebook-link:hover {
+  color: #ffd700;
   box-shadow: 0 0 25px #ffd700, 0 0 40px #ff9933;
   text-shadow: 0 0 10px #ffd700, 0 0 20px #ff9933;
-  transition: all 0.3s ease;
 }
 
-  /* 🌿 Mobile curtain menu toggle */
+/* 🌿 Mobile curtain menu toggle */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -292,8 +386,41 @@ footer {
   cursor: pointer;
 }
 
-/* 🌿 Mobile curtain menu behavior */
+/* 🌿 Responsive layout & mobile curtain menu behavior */
 @media (max-width: 768px) {
+  header, main {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  header {
+    margin-top: 60px;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+
+  .floating-controls {
+    top: 10px;
+    right: 12px;
+  }
+
+  .control-btn {
+    padding: 6px 12px;
+    font-size: 0.85em;
+  }
+
+  .navbar {
+    text-align: left;
+    padding: 6px 0;
+  }
+
+  /* Scale loading orbit down slightly so peacocks stay inside phone screen */
+  .vel-container {
+    transform: scale(0.68);
+  }
+
   .menu-toggle {
     display: inline-block;
   }
@@ -301,13 +428,14 @@ footer {
   #navMenu {
     display: none;
     flex-direction: column;
+    gap: 0;
     background: rgba(17, 17, 17, 0.95);
     position: absolute;
-    top: 60px;
+    top: 56px;
     left: 0;
     width: 100%;
     z-index: 999;
-    padding: 20px 0;
+    padding: 10px 0;
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     animation: curtainDrop 0.4s ease forwards;
   }
@@ -329,6 +457,35 @@ footer {
     color: #fff;
     font-size: 1.2em;
   }
+
+  .time-box {
+    min-width: 65px;
+    padding: 10px 12px;
+  }
+
+  .time-box span {
+    font-size: 1.7em;
+  }
+
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+  .murugan-img {
+    max-width: 90%;
+  }
+
+  .download-button,
+  .directions-button {
+    width: 95%;
+    font-size: 0.95em;
+    padding: 12px 10px;
+  }
+
+  footer {
+    padding-bottom: 45px; 
+  }
 }
 
 @keyframes curtainDrop {
@@ -336,13 +493,14 @@ footer {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-  
 /* Smooth scrolling */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
-  /* Golden styling for story subheadings */
+/* Golden styling for story subheadings */
 #jeevaratham-story h3 {
-  color: #ffd700; /* radiant gold */
+  color: #ffd700;
   text-shadow: 0 0 8px #f4a460, 0 0 16px #ffcc00;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -355,26 +513,25 @@ html { scroll-behavior: smooth; }
   color: #fff;
 }
 
-  /* 🌿 Remove side dots from Jeevaratham story list */
+/* 🌿 Remove side dots from Jeevaratham story list */
 #jeevaratham-story ul {
   list-style-type: none;
   padding-left: 0;
+  max-width: 680px;
+  margin: 10px auto;
 }
 
-  /* 🌿 Golden teaser line at the end of Jeevaratham story */
+#jeevaratham-story li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* 🌿 Golden teaser line at the end of Jeevaratham story */
 #jeevaratham-story p em {
   color: #ffd700;
   font-style: italic;
   text-shadow: 0 0 8px #f4a460, 0 0 16px #ffcc00;
   display: block;
-  margin-top: 20px;
-}
-
-/* Footer */
-footer {
-  position: relative; /* Allows the counter to anchor to the bottom-right corner */
-  color: #fff;
-  padding: 20px;
   margin-top: 20px;
 }
 
@@ -392,42 +549,3 @@ footer {
 .visitor-counter:hover {
   opacity: 1; /* Becomes clear when you hover over it */
 }
-
-/* Keep it neat on mobile screens so it doesn't overlap the copyright text */
-@media (max-width: 768px) {
-  footer {
-    padding-bottom: 45px; 
-  }
-}
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
