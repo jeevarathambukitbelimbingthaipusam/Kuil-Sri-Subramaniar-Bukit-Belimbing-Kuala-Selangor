@@ -370,20 +370,17 @@ html { scroll-behavior: smooth; }
   margin-top: 20px;
 }
 
-/* Discreet Visitor Counter */
+/* Visitor Counter at the bottom of the website (inside footer) */
 .visitor-counter {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  opacity: 0.4; /* 60% transparent */
-  transform: scale(0.7); /* Shrinks it down */
-  transform-origin: bottom right;
-  z-index: 1000; 
-  transition: opacity 0.3s ease; 
+  margin-top: 10px;
+  opacity: 0.65; /* Slightly subtle so it doesn't distract */
+  transform: scale(0.85); /* Clean, compact size */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .visitor-counter:hover {
-  opacity: 1; /* Fully visible when you hover over it */
+  opacity: 1;
+  transform: scale(0.95);
 }
 
 
